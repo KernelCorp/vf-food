@@ -8,6 +8,7 @@ gem 'mongoid', '4.0.0.beta1'
 gem 'mongoid-paperclip', require: 'mongoid_paperclip'
 gem 'mongoid_slug'
 gem 'mongoid_orderable'
+gem 'mongoid_acts_as_page', '~> 0.5.1'
 
 # AA
 gem 'activeadmin',         github: 'gregbell/active_admin', ref: '65aae6b68e78aad3071b2f85242b19fd3fccf426'

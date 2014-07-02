@@ -178,6 +178,11 @@ GEM
       tzinfo (>= 0.3.37)
     mongoid-paperclip (0.0.9)
       paperclip (>= 2.3.6)
+    mongoid_acts_as_page (0.5.1)
+      mongoid
+      mongoid_orderable
+      mongoid_slug
+      rails (~> 4.0.0)
     mongoid_orderable (4.1.0)
       mongoid
     mongoid_slug (3.2.1)
@@ -343,6 +348,7 @@ DEPENDENCIES
   jquery-rails
   mongoid (= 4.0.0.beta1)
   mongoid-paperclip
+  mongoid_acts_as_page (~> 0.5.1)
   mongoid_orderable
   mongoid_slug
   net-ssh (~> 2.7.0)
