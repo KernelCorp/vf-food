@@ -1,4 +1,7 @@
 VfFood::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  mount ActiveAdmin::Tinymce::Engine => '/', as: 'admin_editor'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
