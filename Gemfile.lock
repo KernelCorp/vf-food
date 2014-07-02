@@ -182,7 +182,7 @@ GEM
       tzinfo (>= 0.3.37)
     mongoid-paperclip (0.0.9)
       paperclip (>= 2.3.6)
-    mongoid_acts_as_page (0.5.2)
+    mongoid_acts_as_page (0.5.4)
       mongoid
       mongoid_orderable
       mongoid_slug
@@ -298,7 +298,7 @@ GEM
       activesupport (>= 3.0, < 4.1)
       railties (>= 3.0, < 4.1)
       slim (~> 2.0)
-    sprockets (2.8.0)
+    sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
