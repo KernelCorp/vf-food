@@ -1,4 +1,4 @@
-class OrdersController < InheritedResources::Base
+class OrdersController < ApplicationController
 
   def create
     @order = Order.new order_params
