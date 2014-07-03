@@ -1,5 +1,5 @@
 ActiveAdmin.register About do
-  permit_params :name, :text, :seo, :title, :description, :keywords
+  permit_params :name, :text, seo_attributes: [:title, :description, :keywords]
 
   config.filters = false
 
