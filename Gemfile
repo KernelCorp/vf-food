@@ -10,6 +10,9 @@ gem 'mongoid_slug'
 gem 'mongoid_orderable'
 gem 'mongoid_acts_as_page', '~> 0.5.1'
 
+# handlers
+gem 'slim-rails'
+
 # AA
 gem 'activeadmin',         github: 'gregbell/active_admin', ref: '65aae6b68e78aad3071b2f85242b19fd3fccf426'
 gem 'activeadmin-mongoid', github: 'elia/activeadmin-mongoid', branch: 'rails4'

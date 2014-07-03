@@ -1,4 +1,6 @@
 VfFood::Application.routes.draw do
+  resources :orders
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   mount ActiveAdmin::Tinymce::Engine => '/', as: 'admin_editor'
