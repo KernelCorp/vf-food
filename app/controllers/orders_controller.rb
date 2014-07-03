@@ -1,14 +1,9 @@
 class OrdersController < ApplicationController
-
-  def create
-    @order = Order.new order_params
-    @order.save
-    render json: @order
-  end
-
+  respond_to :json
+  inherit_resources
+  actions :create
 
   private
-
   def order_params
     params.require(:order).permit :name, :phone, :email, :text, :from
   end

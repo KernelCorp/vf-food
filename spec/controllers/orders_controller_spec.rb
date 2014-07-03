@@ -29,7 +29,9 @@ RSpec.describe OrdersController, :type => :controller do
   # in order to pass any filters (e.g. authentication) defined in
   # OrdersController. Be sure to keep this updated too.
   let(:valid_session) { {} }
-
+  before :each do
+    request.accept = 'application/json'
+  end
   describe "POST create" do
     describe "with valid params" do
       it "creates a new Order" do
