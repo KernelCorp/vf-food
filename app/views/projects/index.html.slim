@@ -14,7 +14,6 @@ table
 
   - @projects.each do |project|
     tr
-      - project.image.each do |img|
-        = img.url
+      td == project.name
       td = link_to 'Show', project
 

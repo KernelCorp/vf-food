@@ -2,5 +2,5 @@ class Project
   include Mongoid::Document
   include ActsAsPage
 
-  embeds_many :galleries_images, as: :images
+  embeds_many :images, as: :galleries_images
 end
