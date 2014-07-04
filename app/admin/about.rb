@@ -20,7 +20,7 @@ ActiveAdmin.register About do
       row :description do |seo|
         about.seo.description
       end
-      row :title do |seo|
+      row :keywords do |seo|
         about.seo.keywords
       end
     end
