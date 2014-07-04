@@ -1,0 +1,18 @@
+ru:
+  mongoid: &mongoid
+    models:
+      about:
+        one:   О компании
+        few:   О компании
+        many:  О компании
+        other: О компании
+
+    attributes:
+      about:
+        name: Заголовок
+        text: Текст
+      seo:
+        title: SEO-заголовок
+        description: Описание
+        keywords: Ключевые слова
+  activerecord: *mongoid
