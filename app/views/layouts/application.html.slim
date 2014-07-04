@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    == content_for(:meta) || render('/meta_default')
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+  body
+
+    .yield == yield
+
+    .footer: .central Все права защищены (с) VF food. #{Time.now.year}
