@@ -6,13 +6,22 @@ ru:
         few:   О компании
         many:  О компании
         other: О компании
+      master_class:
+        one:   Мастер-Класс
+        few:   Мастер-Класса
+        many:  Мастер-Классов
+        other: Мастер-Классы
 
     attributes:
-      about:
-        name: Заголовок
-        text: Текст
-      seo:
+      acts_as_page/seo:
         title: SEO-заголовок
         description: Описание
         keywords: Ключевые слова
+      about:
+        name: Заголовок
+        text: Текст
+      master_class:
+        name: Заголовок
+        text: Текст
+
   activerecord: *mongoid

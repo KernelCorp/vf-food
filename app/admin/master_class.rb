@@ -1,4 +1,4 @@
-ActiveAdmin.register About do
+ActiveAdmin.register MasterClass do
   permit_params :name, :text, seo_attributes: [:title, :description, :keywords]
 
   config.filters = false
