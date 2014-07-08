@@ -1,0 +1,15 @@
+.image_grid
+{
+  margin-top: 40px;
+  margin-right: -1.1%;
+  .image_elem
+  {
+    border: 1px solid #ccc;
+    display: inline-block;
+    margin-right: 0.5%;
+    margin-bottom: 40px;
+    text-align: center;
+    vertical-align: top;
+    width: 24%;
+  }
+}

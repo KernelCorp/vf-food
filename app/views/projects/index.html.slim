@@ -1,0 +1,19 @@
+- content_for :meta do
+  title VF food | Projects
+  meta name='description' content='Projects page'
+  meta name='keywords' content='Projects'
+
+h1 Listing projects
+
+table
+  tr
+    th Image
+    th
+    th
+    th
+
+  - @projects.each do |project|
+    tr
+      td == project.name
+      td = link_to 'Show', project
+

@@ -1,4 +1,6 @@
 VfFood::Application.routes.draw do
+  resources :projects
+
   resources :orders
 
   devise_for :admin_users, ActiveAdmin::Devise.config

@@ -1,0 +1,8 @@
+#my_file_uploader
+javascript:
+  var uploader = new qq.FileUploader({
+      element: document.getElementById('my_file_uploader'),
+      action: "#{add_files_admin_images_path}",
+      params: { "authenticity_token": "#{form_authenticity_token}" },
+      customHeaders: { "X-File-Upload": "true" }
+  });
