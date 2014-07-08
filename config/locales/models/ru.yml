@@ -1,4 +1,10 @@
 ru:
+  attributes:
+    title: Заголовок
+    name: Название
+    description: Описание
+    text: Текст
+
   mongoid: &mongoid
     models:
       about:
@@ -11,17 +17,24 @@ ru:
         few:   Мастер-Класса
         many:  Мастер-Классов
         other: Мастер-Классы
+      catering:
+        one:   Кейтеринг
+        few:   Кейтеринга 
+        many:  Кейтерингов
+        other: Кейтеринги
+      dish:
+        one:   Блюдо
+        few:   Блюда
+        many:  Блюд
+        other: Блюда
 
     attributes:
       acts_as_page/seo:
         title: SEO-заголовок
-        description: Описание
         keywords: Ключевые слова
       about:
         name: Заголовок
-        text: Текст
-      master_class:
-        name: Заголовок
-        text: Текст
+      dish:
+        cost: Стоимость
 
   activerecord: *mongoid

@@ -10,18 +10,17 @@ ActiveAdmin.register MasterClass do
     default_actions
   end
 
-  show do |about|
+  show do |master_class|
     attributes_table do
       row :name
       row :text
-      row :title do |seo|
-        about.seo.title
-      end
-      row :description do |seo|
-        about.seo.description
-      end
-      row :title do |seo|
-        about.seo.keywords
+    end
+
+    panel 'SEO' do
+      table_for master_class.seo, i18n: ActsAsPage::Seo do
+        column :title
+        column :description
+        column :keywords
       end
     end
   end

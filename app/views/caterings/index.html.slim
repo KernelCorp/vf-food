@@ -1,0 +1,3 @@
+#caterings_index.page
+  - @caterings.each do |catering|
+    a.catering href=catering_path(catering) = catering.name

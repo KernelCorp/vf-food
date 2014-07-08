@@ -6,6 +6,7 @@ VfFood::Application.routes.draw do
   mount ActiveAdmin::Tinymce::Engine => '/', as: 'admin_editor'
 
   resources :master_classes
+  resources :caterings
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
