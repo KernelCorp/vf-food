@@ -1,0 +1,11 @@
+- content_for :meta
+  title @master_class.seo.title
+  meta property='og:type' content='article'
+  meta property='og:title' content=@master_class.seo.title
+  meta name='description' property='og:description' content=@master_class.seo.description
+  meta property='keywords' content=@master_class.seo.keywords
+
+#master_classes_show.page
+  .master_class
+    .name = @master_class.name
+    .text == @master_class.text

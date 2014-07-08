@@ -1,4 +1,4 @@
-ActiveAdmin.register About do
+ActiveAdmin.register MasterClass do
   permit_params :name, :text, seo_attributes: [:title, :description, :keywords]
 
   config.filters = false
@@ -20,7 +20,7 @@ ActiveAdmin.register About do
       row :description do |seo|
         about.seo.description
       end
-      row :keywords do |seo|
+      row :title do |seo|
         about.seo.keywords
       end
     end
