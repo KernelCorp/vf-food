@@ -1,0 +1,20 @@
+- content_for :meta do
+  title VF food | Project #{@consulting.seo.title}
+  meta name='description' content=@consulting.seo.description
+  meta name='keywords' content=@consulting.seo.keywords
+
+p#notice = notice
+
+p
+  strong Name:
+  == @consulting.name
+  strong Image:
+  - @consulting.images.each do |img|
+    == img.attachment.url
+
+P
+  strong Text:
+  == @consulting.text
+
+
+= link_to 'Back', consulting_path

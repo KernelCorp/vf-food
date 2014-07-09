@@ -32,6 +32,11 @@ ru:
         few:   Работы
         many:  Работ
         other: Работы
+      consulting:
+        one:   Консалтинг
+        few:   Консалтинг
+        many:  Консалтинг
+        other: Консалтинг
 
     attributes:
       acts_as_page/seo:
