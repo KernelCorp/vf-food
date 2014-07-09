@@ -2,9 +2,9 @@ ru:
   formtastic:
     yes: 'Да'
     no: 'Нет'
-    create: 'Создать %{model}'
-    update: 'Обновить %{model}'
-    submit: 'Приминить %{model}'
+    create: 'Создать'
+    update: 'Обновить'
+    submit: 'Применить'
   active_admin:
     menu:
       users: Пользователи
@@ -17,11 +17,11 @@ ru:
     edit: "Изменить"
     delete: "Удалить"
     delete_confirmation: "Вы уверены, что хотите удалить это?"
-    new_model: "Создать %{model}"
-    create_model: "Создать %{model}"
-    edit_model: "Изменить %{model}"
-    update_model: "Изменить %{model}"
-    delete_model: "Удалить %{model}"
+    new_model: "Создать"
+    create_model: "Создать"
+    edit_model: "Изменить"
+    update_model: "Изменить"
+    delete_model: "Удалить"
     details: "%{model} подробнее"
     cancel: "Отмена"
     empty: "Пусто"

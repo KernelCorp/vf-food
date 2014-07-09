@@ -27,6 +27,11 @@ ru:
         few:   Блюда
         many:  Блюд
         other: Блюда
+      project:
+        one:   Работа
+        few:   Работы
+        many:  Работ
+        other: Работы
 
     attributes:
       acts_as_page/seo:
@@ -36,5 +41,7 @@ ru:
         name: Заголовок
       dish:
         cost: Стоимость
+
+    add_images: Добавить изображения
 
   activerecord: *mongoid
