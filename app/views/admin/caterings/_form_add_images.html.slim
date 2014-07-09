@@ -1,0 +1,23 @@
+h2 == t(:add_images, scope: :mongoid)
+
+#my_file_uploader
+
+div#image_grid.image_grid
+  - @catering.images.each do |image|
+    div.image_elem
+      div
+        img src=image.attachment.url(:thumb)
+      div
+        a.delete-image href=delete_file_admin_project_path Удалить
+        input.image-id value=image.id type='hidden'
+        input.parent-id value=@catering.id type='hidden'
+
+
+javascript:
+  var uploader = new qq.FileUploader({
+    element: document.getElementById('my_file_uploader'),
+    action: "#{add_files_admin_catering_path}",
+    title_require: false,
+    params: { "authenticity_token": "#{form_authenticity_token}" },
+    customHeaders: { "X-File-Upload": "true" }
+  });

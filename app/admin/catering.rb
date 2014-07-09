@@ -5,6 +5,29 @@ ActiveAdmin.register Catering do
 
   config.filters = false
 
+  controller do
+    include ImageRowUploader
+  end
+  member_action :add_files, :method => :post do
+    @catering = Catering.find params[:id]
+    @image = @catering.images.build(attachment: @raw_file)
+
+    if @image.save
+      render json: { success: true, :url => @image.attachment.url(:thumb), :id => @image.id }
+    else
+      render json: { success: false }
+    end
+  end
+  member_action :delete_file, :method => :delete do
+    @catering = Catering.find params[:parent_id]
+
+    if @catering.images.where(id: params[:image_id]).delete
+      render json: { success: true }
+    else
+      render json: { success: false }
+    end
+  end
+
   index do
     selectable_column
     column :name
@@ -33,6 +56,7 @@ ActiveAdmin.register Catering do
         column :cost
       end
     end
+    render 'admin/caterings/form_add_images'
   end
 
   form do |f|
