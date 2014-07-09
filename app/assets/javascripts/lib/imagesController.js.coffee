@@ -4,13 +4,13 @@ class window.imagesController
     elem = $(this)
     parent = elem.parents('.image_elem')
     img_id = parent.find('.image-id')[0].value
-    project_id = parent.find('.project-id')[0].value
+    parent_id = parent.find('.parent-id')[0].value
     url = elem.attr('href')
     $.ajax(
       type: 'delete'
       url: url
       data: {
-        project_id: project_id
+        parent_id: parent_id
         image_id: img_id
       }
       success: (res)->

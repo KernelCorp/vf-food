@@ -1,4 +1,9 @@
 ActiveAdmin.register Project do
+
+  controller do
+    include ImageRowUploader
+  end
+
   permit_params :name, :text, seo_attributes: [:title, :description, :keywords]
 
   config.filters = false
@@ -14,14 +19,13 @@ ActiveAdmin.register Project do
     end
   end
   member_action :delete_file, :method => :delete do
-    @project = Project.find params[:project_id]
+    @project = Project.find params[:parent_id]
 
     if @project.images.where(id: params[:image_id]).delete
       render json: { success: true }
     else
       render json: { success: false }
     end
-
   end
 
   index do
@@ -61,25 +65,6 @@ ActiveAdmin.register Project do
       s.input :keywords
     end
     f.actions
-  end
-
-  controller do
-    before_filter :parse_raw_upload, :only => [:add_files]
-
-    private
-
-    def parse_raw_upload
-      if env['HTTP_X_FILE_UPLOAD'] == 'true'
-        @raw_file = env['rack.input']
-        @raw_file.class.class_eval { attr_accessor :original_filename, :content_type }
-        @raw_file.original_filename = env['HTTP_X_FILE_NAME']
-        @raw_file.content_type = env['HTTP_X_MIME_TYPE']
-        if @raw_file.class.name == 'Unicorn::TeeInput'
-          @raw_file = Paperclip::StringioAdapter.new(@raw_file)
-        end
-      end
-    end
-
   end
   
 end
