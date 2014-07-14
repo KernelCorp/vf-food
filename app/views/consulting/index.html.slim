@@ -1,0 +1,19 @@
+- content_for :meta do
+  title VF food | Consulting
+  meta name='description' content='Consulting page'
+  meta name='keywords' content='Consulting'
+
+h1 Listing consulting
+
+table
+  tr
+    th Image
+    th
+    th
+    th
+
+  - @consulting.each do |consulting|
+    tr
+      td == consulting.name
+      td = link_to 'Show', consulting
+

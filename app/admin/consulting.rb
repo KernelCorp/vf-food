@@ -1,4 +1,4 @@
-ActiveAdmin.register Project do
+ActiveAdmin.register Consulting do
 
   controller do
     include ImageRowUploader
@@ -9,8 +9,8 @@ ActiveAdmin.register Project do
   config.filters = false
 
   member_action :add_files, :method => :post do
-    @project = Project.find params[:id]
-    @image = @project.images.build(attachment: @raw_file)
+    @consulting = Consulting.find params[:id]
+    @image = @consulting.images.build(attachment: @raw_file)
 
     if @image.save
       render json: { success: true, :url => @image.attachment.url(:thumb), :id => @image.id }
@@ -19,9 +19,9 @@ ActiveAdmin.register Project do
     end
   end
   member_action :delete_file, :method => :delete do
-    @project = Project.find params[:parent_id]
+    @consulting = Consulting.find params[:parent_id]
 
-    if @project.images.where(id: params[:image_id]).delete
+    if @consulting.images.where(id: params[:image_id]).delete
       render json: { success: true }
     else
       render json: { success: false }
@@ -30,28 +30,28 @@ ActiveAdmin.register Project do
 
   index do
     selectable_column
-    column :name do |project|
-      link_to project.name, project_path(project)
+    column :name do |consulting|
+      link_to consulting.name, consulting_path(consulting)
     end
     column :text
     default_actions
   end
 
-  show do |project|
+  show do |consulting|
     attributes_table do
       row :name
       row :text
       row :title do |seo|
-        project.seo.title
+        consulting.seo.title
       end
       row :description do |seo|
-        project.seo.description
+        consulting.seo.description
       end
       row :keywords do |seo|
-        project.seo.keywords
+        consulting.seo.keywords
       end
     end
-    render 'admin/projects/form_add_images'
+    render 'admin/consulting/form_add_images'
   end
 
   form do |f|

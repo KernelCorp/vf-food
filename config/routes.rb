@@ -1,5 +1,6 @@
 VfFood::Application.routes.draw do
   resources :projects
+  resources :consulting
 
   resources :orders
 
