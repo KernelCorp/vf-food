@@ -6,15 +6,18 @@ describe CateringsController do
     @catering = create :catering
   end
 
-  it '#index' do
-    get :index
-    expect(assigns(:caterings)).to eq [@catering]
-    puts responce
+  describe 'GET index' do
+    describe 'find caterings' do
+      get :index
+      expect(assigns(:caterings)).to eq [@catering]
+    end
   end
 
-  it '#show' do
-    get :show, id: @catering.id
-    expect(assigns(:catering)).to eq @catering
+  describe 'GET show' do
+    describe 'find catering' do
+      get :show, id: @catering.id
+      expect(assigns(:catering)).to eq @catering
+    end
   end
 
 end
