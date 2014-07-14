@@ -7,14 +7,14 @@ describe MasterClassesController do
   end
 
   describe 'GET index' do
-    describe 'find classes' do
+    it 'find classes' do
       get :index
       expect(assigns(:master_classes)).to eq [@master_class]
     end
   end
 
   describe 'GET show' do
-    describe 'find class' do
+    it 'find class' do
       get :show, id: @master_class.id
       expect(assigns(:master_class)).to eq @master_class
     end
