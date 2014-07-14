@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe OrdersController, :type => :controller do
+describe OrdersController, :type => :controller do
 
   # This should return the minimal set of attributes required to create a valid
   # Order. As you add validations to Order, be sure to
