@@ -48,8 +48,8 @@ group :test, :development do
   gem 'cucumber-rails', require: false
   gem 'selenium-webdriver'
   gem 'rack'
-  gem 'coveralls', require: false
-  gem 'simplecov', require: false
+  gem 'coveralls'
+  gem 'simplecov'
   gem 'unicorn_service', require: false
   gem 'nginx-config', require: false
   gem 'email_spec'

@@ -4,3 +4,9 @@
 require File.expand_path('../config/application', __FILE__)
 
 VfFood::Application.load_tasks
+
+if ENV['RAILS_ENV'] == 'test'
+  require 'coveralls/rake/task'
+  Coveralls::RakeTask.new
+  task :test_with_coveralls => [:spec, 'coveralls:push']
+end
