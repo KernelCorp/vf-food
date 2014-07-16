@@ -12,8 +12,15 @@ html, body
 
     >.row
       height: 100%
-      div[class^='col-']
+      >div[class^='col-']
         height: 100%
+        overflow: auto
+
+  div.with_dark_background
+    background-color: hsla(0, 0%, 0%, 0.6)
+
+  div.with_dark_background_85
+    background-color: hsla(0, 0%, 0%, 0.85)
 
 #header
   background-color: hsl(0, 1%, 31%)
@@ -84,9 +91,6 @@ body.about
   background: image-url('background/about.jpg') center center no-repeat
   background-size: cover
 
-div.with_dark_background
-  background-color: hsla(0, 0%, 0%, 0.6)
-
 
 
 
@@ -107,10 +111,12 @@ h3, div.h3
 
 
 a
-  color: #428bca
+  border-bottom: 1px dotted white
+  color: white
   text-decoration: none
 
   &:hover
-    border-bottom: 1px solid #428bca
+    border-bottom: 1px solid white
+    color: white
     text-decoration: none
 
