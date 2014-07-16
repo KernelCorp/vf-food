@@ -5,9 +5,9 @@
     - @about.each do |about|
 
       .collapse id="chief_#{i}" class=(i += 1)==1?'in':nil
-        .col-xs-4
+        .col-md-4
           ==image_tag about.attachment.url(:thumb), alt: 'chief'
-        .col-xs-7
+        .col-md-7
           .h3.first_line == about.name
           .chief_biography == about.text
 
