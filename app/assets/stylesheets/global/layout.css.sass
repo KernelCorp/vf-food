@@ -1,0 +1,112 @@
+html, body
+  height: 100%
+
+#main_wrapper
+  height: 100%
+  padding: 80px 0 50px
+  position: relative
+  width: 100%
+
+  >.container
+    height: 100%
+
+    >.row
+      height: 100%
+      div[class^='col-']
+        height: 100%
+
+#header
+  background-color: hsl(0, 1%, 31%)
+  height: 80px
+  position: absolute
+  text-align: center
+  top: 0
+  width: 100%
+
+  a.menu_logo_link
+    border: none
+    margin-right: 48px
+    text-decoration: none
+
+    img.menu_logo
+      margin-top: 7px
+      vertical-align: top
+      width: 68px
+
+  ul.main_menu
+    display: inline-block
+    padding: 0
+    margin: 0
+
+    li
+      display: inline-block
+      padding: 0
+      margin: 0
+
+      a
+        border: none
+        color: white
+        display: block
+        padding: 30px 26px
+        text-decoration: none
+        width: auto
+
+        &:hover, &.active
+          background-color: #f9f9f9
+          color: hsl(0, 1%, 31%)
+
+#footer
+  background-color: hsl(0, 1%, 31%)
+  bottom: 0
+  color: white
+  height: 50px
+  left: 0
+  position: absolute
+  width: 100%
+
+  .container
+    font-size: 10px
+    margin-top: 18px
+
+body.welcome
+  background: image-url('background/main.jpg') right center no-repeat
+  background-size: contain
+
+body.consulting
+  background: image-url('background/consulting.png') center center no-repeat
+  background-size: contain
+
+body.about
+  background: image-url('background/about.jpg') center center no-repeat
+  background-size: cover
+
+div.with_dark_background
+  background-color: hsla(0, 0%, 0%, 0.6)
+
+
+
+
+h1, h2, h3, h4, h5,
+div.h1, div.h2, div.h3, div.h4, div.h5
+  font-family: roboto_thin, geometria_light, "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-weight: normal
+
+h1, div.h1
+  font-size: 48px
+h2, div.h2
+  font-size: 36px
+h3, div.h3
+  font-size: 24px
+
+.first_line
+  margin-top: 0
+
+
+a
+  color: #428bca
+  text-decoration: none
+
+  &:hover
+    border-bottom: 1px solid #428bca
+    text-decoration: none
+

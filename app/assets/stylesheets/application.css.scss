@@ -1,0 +1,13 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "global/*";
+@import "views/*";
+
+body
+{
+  background-color: #f9f9f9;
+  color: white;
+  font-family: geometria_light, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
