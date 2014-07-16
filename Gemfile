@@ -7,18 +7,22 @@ gem 'mongoid', '4.0.0.beta1'
 #front
 
 # handlers
+gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '~> 4.0.2'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'slim-rails'
+gem 'compass-rails'
 gem 'jbuilder', '~> 1.2'
 
 # assets
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 4.2.1'
 gem 'turbolinks'
 
 # various
 gem 'uglifier', '>= 1.3.0'
+gem 'autoprefixer-rails'
 
 #middle
 gem 'activeadmin',         github: 'gregbell/active_admin', ref: '65aae6b68e78aad3071b2f85242b19fd3fccf426'
