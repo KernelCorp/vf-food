@@ -1,8 +1,22 @@
 .about_page
+
+  .panel
+    border: none
+    border-radius: 0
+    margin-bottom: 0
+
+  .collapse
+    display: none
+
+    &.in
+      display: table
+
   .chief_biography
     font-family: roboto_thin_italic, "Helvetica Neue", Helvetica, Arial, sans-serif
 
   a.chief_link
+    background-color: hsla(0, 0%, 100%, 0.05)
+    border: none
     color: white
     cursor: pointer
     display: block
@@ -11,9 +25,9 @@
     margin-left: -30px
 
     &:hover,
-    &.active:hover
+    &.collapsed:hover
       background-color: hsla(0, 0%, 100%, 0.1)
       border: none
 
-    &.active
-      background-color: hsla(0, 0%, 100%, 0.05)
+    &.collapsed
+      background-color: transparent
