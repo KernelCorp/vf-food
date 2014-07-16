@@ -1,5 +1,8 @@
 VfFood::Application.routes.draw do
-  resources :projects
+
+  root 'welcome#index'
+
+  resources :projects, only: [:index, :show]
   resources :consulting
 
   resources :orders
@@ -10,6 +13,7 @@ VfFood::Application.routes.draw do
 
   resources :master_classes
   resources :caterings
+  resources :about, only: :index
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
