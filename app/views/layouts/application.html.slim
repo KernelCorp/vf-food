@@ -7,8 +7,10 @@ html
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
-  body
+  body class=controller.controller_name
+    #main_wrapper
+      #header == render('_meta/main_menu', page: controller.controller_name)
+      .container
+        == yield
 
-    .yield == yield
-
-    .footer: .central Все права защищены (с) VF food. #{Time.now.year}
+      #footer: .container &copy; #{Time.now.year} VF food, All rights reserved

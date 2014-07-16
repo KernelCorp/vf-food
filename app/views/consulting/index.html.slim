@@ -3,17 +3,21 @@
   meta name='description' content='Consulting page'
   meta name='keywords' content='Consulting'
 
-h1 Listing consulting
+.row
+  .col-sm-6
 
-table
-  tr
-    th Image
-    th
-    th
-    th
+  .col-sm-6.with_dark_background
+    h1 Консалтинг
 
-  - @consulting.each do |consulting|
-    tr
-      td == consulting.name
-      td = link_to 'Show', consulting
+    table
+      tr
+        th Image
+        th
+        th
+        th
+
+      - @consulting.each do |consulting|
+        tr
+          td == consulting.name
+          td = link_to 'Show', consulting
 
