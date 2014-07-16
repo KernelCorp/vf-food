@@ -4,6 +4,7 @@ ru:
     name: Название
     description: Описание
     text: Текст
+    attachment: Изображение
 
   mongoid: &mongoid
     models:

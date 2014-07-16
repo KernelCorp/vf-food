@@ -1,5 +1,5 @@
 ActiveAdmin.register About do
-  permit_params :name, :text, seo_attributes: [:title, :description, :keywords]
+  permit_params :name, :text, :attachment, seo_attributes: [:title, :description, :keywords]
 
   config.filters = false
 
@@ -13,7 +13,12 @@ ActiveAdmin.register About do
   show do |about|
     attributes_table do
       row :name
-      row :text
+      row :text do
+        raw about.text
+      end
+      row :attachment do
+        image_tag(about.attachment.url(:thumb))
+      end
     end
 
     panel 'SEO' do
@@ -29,6 +34,7 @@ ActiveAdmin.register About do
     f.inputs 'Страница' do
       f.input :name
       f.input :text
+      f.input :attachment, as: :file
     end
     f.inputs 'SEO', for: [:seo, f.object.seo] do |s|
       s.input :title
