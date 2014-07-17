@@ -3,11 +3,13 @@
   meta name='description' content=@consulting.seo.description
   meta name='keywords' content=@consulting.seo.keywords
 
-.row
-  .col-sm-6
+.container.full_height
+  .row.consulting_block
+    .col-sm-6
+      a.slider_link#consulting_link href='#' >
 
-  .col-sm-6.with_dark_background
-    - unless @consulting_next.nil?
-      div.consulting_link_block
-        = link_to @consulting_next.name, @consulting_next, class: 'next_consulting'
-    = render 'consulting', consulting: @consulting unless @consulting.nil?
+    .col-sm-6.with_dark_background
+      - unless @consulting_next.nil?
+        div.consulting_link_block
+          = link_to @consulting_next.name, @consulting_next, class: 'next_consulting'
+      = render 'consulting', consulting: @consulting unless @consulting.nil?
