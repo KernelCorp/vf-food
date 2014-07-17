@@ -1,23 +1,15 @@
 - content_for :meta do
-  title VF food | Consulting
-  meta name='description' content='Consulting page'
-  meta name='keywords' content='Consulting'
+  title VF food | #{@consulting.seo.title}
+  meta name='description' content=@consulting.seo.description
+  meta name='keywords' content=@consulting.seo.keywords
 
 .row
   .col-sm-6
 
   .col-sm-6.with_dark_background
-    h1 Консалтинг
+    - unless @consulting_next.nil?
+      div.consulting_link_block
+        = link_to @consulting_next.name, @consulting_next, class: 'next_consulting'
+    = render 'consulting', consulting: @consulting unless @consulting.nil?
 
-    table
-      tr
-        th Image
-        th
-        th
-        th
-
-      - @consulting.each do |consulting|
-        tr
-          td == consulting.name
-          td = link_to 'Show', consulting
 

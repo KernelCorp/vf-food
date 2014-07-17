@@ -1,8 +1,19 @@
 button.button,
 a.button
   background-color: hsl(0, 1%, 31%)
-  box-shadow: 5px 5px 3px #444
+  border: none
+  box-shadow: 5px 5px 5px #444
   color: #f9f9f9
+  cursor: pointer
+  display: inline-block
   font-family: geometria_light, "Helvetica Neue", Helvetica, Arial, sans-serif
   font-size: 14px
+  outline: none
   padding: 14px 36px
+
+  &.center
+    border: none
+    margin: 40px 0 40px 20%
+
+  &:focus
+    outline: none

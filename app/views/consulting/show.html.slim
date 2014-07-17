@@ -1,20 +1,13 @@
 - content_for :meta do
-  title VF food | Project #{@consulting.seo.title}
+  title VF food | #{@consulting.seo.title}
   meta name='description' content=@consulting.seo.description
   meta name='keywords' content=@consulting.seo.keywords
 
-p#notice = notice
+.row
+  .col-sm-6
 
-p
-  strong Name:
-  == @consulting.name
-  strong Image:
-  - @consulting.images.each do |img|
-    == img.attachment.url
-
-P
-  strong Text:
-  == @consulting.text
-
-
-= link_to 'Back', consulting_path
+  .col-sm-6.with_dark_background
+    - unless @consulting_next.nil?
+      div.consulting_link_block
+        = link_to @consulting_next.name, @consulting_next, class: 'next_consulting'
+    = render 'consulting', consulting: @consulting unless @consulting.nil?

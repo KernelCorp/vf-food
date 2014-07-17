@@ -1,0 +1,9 @@
+h1 == consulting.name
+
+.description
+  == consulting.text
+
+button.button.center Заказать #{consulting.name}
+
+javascript:
+  consultingImageList = JSON.parse('#{raw JSON(consulting.images.map{|img| img.attachment.url(:full_size)})}')
