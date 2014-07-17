@@ -6,7 +6,9 @@ ActiveAdmin.register About do
   index do
     selectable_column
     column :name
-    column :text
+    column :text do |about|
+      raw about.text
+    end
     default_actions
   end
 
