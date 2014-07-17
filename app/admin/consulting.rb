@@ -33,14 +33,18 @@ ActiveAdmin.register Consulting do
     column :name do |consulting|
       link_to consulting.name, consulting_path(consulting)
     end
-    column :text
+    column :text do |consulting|
+      raw consulting.text
+    end
     default_actions
   end
 
   show do |consulting|
     attributes_table do
       row :name
-      row :text
+      row :text do
+        raw consulting.text
+      end
       row :title do |seo|
         consulting.seo.title
       end
