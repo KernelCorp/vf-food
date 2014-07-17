@@ -22,6 +22,11 @@ class GalleriesImage
           }
 
       },
+      convert_options:{
+          small: '-quality 100 -strip',
+          thumb: '-quality 80 -strip',
+          full_size: '-quality 100 -strip'
+      },
       path: ':rails_root/public/system/images/:style/:filename',
       url: '/system/images/:style/:filename'
 
