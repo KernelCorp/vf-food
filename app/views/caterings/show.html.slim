@@ -1,14 +1,15 @@
 - content_for :meta
   = render '_meta/acts_as_page', page: @catering
 
-#caterings_show.page
-  .master_class
-    .name = @catering.name
-    .text == @catering.text
+.container
+  #caterings_show.page
+    .master_class
+      .name = @catering.name
+      .text == @catering.text
 
-    .dishes
-      - @catering.dishes.each do |dish|
-        .dish
-          .name = dish.name
-          .description == dish.description
-          .cost = dish.cost
+      .dishes
+        - @catering.dishes.each do |dish|
+          .dish
+            .name = dish.name
+            .description == dish.description
+            .cost = dish.cost

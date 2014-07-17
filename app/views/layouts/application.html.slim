@@ -10,7 +10,7 @@ html
   body class=controller.controller_name
     #main_wrapper
       #header == render('_meta/main_menu', page: controller.controller_name)
-      .container
-        == yield
+
+      == yield
 
       #footer: .container &copy; #{Time.now.year} VF food, All rights reserved

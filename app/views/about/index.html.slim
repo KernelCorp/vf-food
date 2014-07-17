@@ -1,29 +1,30 @@
-#accordion.row.about_page
-  .col-sm-6.panel.with_dark_background_85
-    h1 &nbsp
-    - i = 0
-    - @about.each do |about|
+.container.full_height
+  #accordion.row.about_page
+    .col-sm-6.panel.with_dark_background_85
+      h1 &nbsp
+      - i = 0
+      - @about.each do |about|
 
-      .collapse id="chief_#{i}" class=(i += 1)==1?'in':nil
-        .col-md-4
-          ==image_tag about.attachment.url(:thumb), alt: 'chief'
-        .col-md-7
-          .h3.first_line == about.name
-          .chief_biography == about.text
-
-
-
-  .col-sm-6.with_dark_background_85
-    h1 Наша команда
-
-    - i = 0
-    - @about.each do |about|
-      a.chief_link class=(i += 1)>1?'collapsed':nil data-parent=\
-        "#accordion" data-toggle="collapse" href="#chief_#{i}" == about.name
+        .collapse id="chief_#{i}" class=(i += 1)==1?'in':nil
+          .col-md-4
+            ==image_tag about.attachment.url(:thumb), alt: 'chief'
+          .col-md-7
+            .h3.first_line == about.name
+            .chief_biography == about.text
 
 
-    p Созданная двумя шеф-поварами в 2012 году, компания VFcatering успешно работает в области ресторанного бизнеса, гостеприимства и еды.
-    p Команда состоит из поваров, сомелье, официантов, барменов, технологов, объединенных постоянным стремлением к улучшению своего мастерства и повышению квалификации.
-    p Мы используем наш разный комплементарный опыт, чтобы оказывать услуги консалтинга самого широкого спектра с индивидуальным подходом, и предлагаем безупречный уровень кейтеринга, в любом формате.
-    p Наша команда - синергия профессионалов, любящая свою работу и нацеленная на результат, незабывающая суть нашей профессии: квинтэссенция сервиса гостеприимства и удовольствия.
+
+    .col-sm-6.with_dark_background_85
+      h1 Наша команда
+
+      - i = 0
+      - @about.each do |about|
+        a.chief_link class=(i += 1)>1?'collapsed':nil data-parent=\
+          "#accordion" data-toggle="collapse" href="#chief_#{i}" == about.name
+
+
+      p Созданная двумя шеф-поварами в 2012 году, компания VFcatering успешно работает в области ресторанного бизнеса, гостеприимства и еды.
+      p Команда состоит из поваров, сомелье, официантов, барменов, технологов, объединенных постоянным стремлением к улучшению своего мастерства и повышению квалификации.
+      p Мы используем наш разный комплементарный опыт, чтобы оказывать услуги консалтинга самого широкого спектра с индивидуальным подходом, и предлагаем безупречный уровень кейтеринга, в любом формате.
+      p Наша команда - синергия профессионалов, любящая свою работу и нацеленная на результат, незабывающая суть нашей профессии: квинтэссенция сервиса гостеприимства и удовольствия.
 

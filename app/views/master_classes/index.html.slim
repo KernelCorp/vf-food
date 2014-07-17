@@ -1,9 +1,10 @@
-.row
-  .col-sm-6
+.container
+  .row
+    .col-sm-6
 
-  .col-sm-6.with_dark_background
-    h1 Мастер-классы
+    .col-sm-6.with_dark_background
+      h1 Мастер-классы
 
-    #master_classes_index.page
-      - @master_classes.each do |master_class|
-        a.master_class href=master_class_path(master_class) = master_class.name
+      #master_classes_index.page
+        - @master_classes.each do |master_class|
+          a.master_class href=master_class_path(master_class) = master_class.name

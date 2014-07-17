@@ -3,18 +3,20 @@
   meta name='description' content= @project.seo.description
   meta name='keywords' content= @project.seo.keywords
 
-p#notice = notice
+.container
 
-p
-  strong Name:
-  == @project.name
-  strong Image:
-  - @project.images.each do |img|
-    == img.attachment.url
+  p#notice = notice
 
-P
-  strong Text:
-  == @project.text
+  p
+    strong Name:
+    == @project.name
+    strong Image:
+    - @project.images.each do |img|
+      == img.attachment.url
+
+  P
+    strong Text:
+    == @project.text
 
 
-= link_to 'Back', projects_path
+  = link_to 'Back', projects_path

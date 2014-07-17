@@ -1,9 +1,10 @@
-.row
-  .col-sm-6
+.container
+  .row
+    .col-sm-6
 
-  .col-sm-6.with_dark_background
-    h1 Кейтеринг
+    .col-sm-6.with_dark_background
+      h1 Кейтеринг
 
-    #caterings_index.page
-      - @caterings.each do |catering|
-        a.catering href=catering_path(catering) = catering.name
+      #caterings_index.page
+        - @caterings.each do |catering|
+          a.catering href=catering_path(catering) = catering.name

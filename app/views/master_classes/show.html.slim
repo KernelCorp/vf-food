@@ -1,7 +1,8 @@
 - content_for :meta
   = render '_meta/acts_as_page', page: @master_class
 
-#master_classes_show.page
-  .master_class
-    .name = @master_class.name
-    .text == @master_class.text
+.container
+  #master_classes_show.page
+    .master_class
+      .name = @master_class.name
+      .text == @master_class.text

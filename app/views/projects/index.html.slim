@@ -3,17 +3,20 @@
   meta name='description' content='Projects page'
   meta name='keywords' content='Projects'
 
-h1 Listing projects
 
-table
-  tr
-    th Image
-    th
-    th
-    th
+.container
 
-  - @projects.each do |project|
+  h1 Listing projects
+
+  table
     tr
-      td == project.name
-      td = link_to 'Show', project
+      th Image
+      th
+      th
+      th
+
+    - @projects.each do |project|
+      tr
+        td == project.name
+        td = link_to 'Show', project
 
