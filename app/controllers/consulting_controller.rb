@@ -4,12 +4,12 @@ class ConsultingController < InheritedResources::Base
 
   def index
     @consulting = Consulting.first
-    @consulting_next = @consulting.next_record
+    redirect_to @consulting unless @consulting.nil?
   end
 
   def show
     @consulting = Consulting.find params[:id]
-    @consulting_next = @consulting.next_record
+    @consulting_next = @consulting.next_record || Consulting.first
   end
 
 end
