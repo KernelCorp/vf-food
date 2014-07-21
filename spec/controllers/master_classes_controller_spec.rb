@@ -7,9 +7,9 @@ describe MasterClassesController do
   end
 
   describe 'GET index' do
-    it 'find classes' do
+    it 'index page redirect to show first record' do
       get :index
-      expect(assigns(:master_classes)).to eq [@master_class]
+      expect(response).to redirect_to(master_class_path(@master_class))
     end
   end
 
