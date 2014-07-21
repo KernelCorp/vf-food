@@ -1,0 +1,10 @@
+#clients-container.container
+  .row
+    .col-sm-2
+    .col-sm-10
+      h1 Клиенты
+
+  #inside-container
+    - @clients.each do |client|
+      #client-block style="background-image: url(#{client.attachment.url(:original)})"
+        a{href= client.link}

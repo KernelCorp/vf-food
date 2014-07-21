@@ -38,10 +38,10 @@ RSpec.describe ConsultingController, :type => :controller do
   let(:valid_session) { {} }
 
   describe "GET index" do
-    it "assigns all consulting as @consulting" do
+    it "index page redirect to show first record" do
       consulting = Consulting.create valid_attributes
       get :index, {}, valid_session
-      expect(assigns(:consulting)).to eq([consulting])
+      expect(response).to redirect_to(consulting_path(consulting))
     end
   end
 
