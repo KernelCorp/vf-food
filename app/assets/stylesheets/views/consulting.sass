@@ -1,6 +1,26 @@
 div.consulting_block
   position: relative
 
+  button.button
+    margin-top: 40px
+
+  div#consulting_slider
+    position: absolute
+    z-index: 1
+    height: 100%
+    width: 100%
+
+    ul
+      li
+        img
+          display: block
+          margin: 0 auto
+          max-width: 100%
+          max-height: 100%
+
+  div#consulting_description
+    z-index: 3
+
   a.slider_link
     background-color: hsla(0, 0, 0, 0.6)
     border: none
@@ -9,12 +29,16 @@ div.consulting_block
     font-family: roboto_thin, geometria_light, "Helvetica Neue", Helvetica, Arial, sans-serif
     font-size: 60px
     height: 80px
-    right: 0
+    right: 50%
     line-height: 68px
     padding-left: 8px
     position: absolute
     top: 150px
     width: 40px
+    z-index: 3
+
+    &.expand
+      right: 0
 
     &:hover
       background-color: hsla(0, 0, 20%, 0.6)
