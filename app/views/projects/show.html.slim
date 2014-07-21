@@ -1,7 +1,5 @@
-- content_for :meta do
-  title VF food | Project #{@project.seo.title}
-  meta name='description' content= @project.seo.description
-  meta name='keywords' content= @project.seo.keywords
+- content_for :meta
+  = render '_meta/acts_as_page', page: @project
 
 .container
 

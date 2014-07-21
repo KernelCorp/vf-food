@@ -1,8 +1,17 @@
 - content_for :meta
   = render '_meta/acts_as_page', page: @master_class
 
-.container
-  #master_classes_show.page
-    .master_class
-      .name = @master_class.name
-      .text == @master_class.text
+.container#master_classes_show
+
+  .row.with_dark_background
+    == image_tag @master_class.attachment.url(:original), class: 'master_class_img'
+
+    ul.menu
+      - @master_classes.each do |mc_class|
+        li == link_to mc_class.name, mc_class, class: ('active'if mc_class == @master_class)
+
+    .col-sm-6
+      .h1 == @master_class.name
+
+    .col-sm-6
+      == @master_class.text
