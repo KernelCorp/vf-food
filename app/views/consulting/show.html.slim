@@ -5,11 +5,22 @@
 
 .container.full_height
   .row.consulting_block
-    .col-sm-6
-      a.slider_link#consulting_link href='#' >
+    #consulting_slider
+      ul
+        - @consulting.images.each do |img|
+          li: img src=img.attachment.url(:full_size)
 
-    .col-sm-6.with_dark_background
+    a.slider_link.collapse#consulting_link href='#' >
+
+    .col-sm-offset-6.col-sm-6.with_dark_background#consulting_description
       - unless @consulting_next.nil?
         div.consulting_link_block
           = link_to @consulting_next.name, @consulting_next, class: 'next_consulting'
-      = render 'consulting', consulting: @consulting unless @consulting.nil?
+
+
+      h1 == @consulting.name
+
+      .description
+        == @consulting.text
+
+      button.button.center Заказать #{@consulting.name}
