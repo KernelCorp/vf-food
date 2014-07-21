@@ -15,8 +15,8 @@ class MasterClass
       convert_options:{
           thumb: '-quality 100 -strip'
       },
-      path: ':rails_root/public/system/images/:style/:filename',
-      url: '/system/images/:style/:filename'
+      path: ':rails_root/public/system/images/:class/:id_partition/:style/:filename',
+      url: '/system/images/:class/:id_partition/:style/:filename'
 
   validates_attachment_content_type :attachment, content_type: %w(image/jpg image/jpeg image/png)
 end
