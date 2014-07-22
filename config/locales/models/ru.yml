@@ -38,6 +38,11 @@ ru:
         few:   Консалтинг
         many:  Консалтинг
         other: Консалтинг
+      client:
+        one:   Клиент
+        few:   Клиента
+        many:  Клиентов
+        other: Клиенты
 
     attributes:
       acts_as_page/seo:
@@ -47,6 +52,9 @@ ru:
         name: Заголовок
       dish:
         cost: Стоимость
+      client:
+        name: Название
+        link: Ссылка
 
     add_images: Добавить изображения
 

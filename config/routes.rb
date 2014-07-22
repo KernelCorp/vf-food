@@ -14,6 +14,7 @@ VfFood::Application.routes.draw do
   resources :master_classes
   resources :caterings
   resources :about, only: :index
+  resources :clients
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
