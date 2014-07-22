@@ -43,6 +43,16 @@ ru:
         few:   Клиента
         many:  Клиентов
         other: Клиенты
+      menu:
+        one:   Меню
+        few:   Меню
+        many:  Меню
+        other: Меню
+      section:
+        one:   Секция
+        few:   Секции
+        many:  Секций
+        other: Секции
 
     attributes:
       acts_as_page/seo:
@@ -55,6 +65,13 @@ ru:
       client:
         name: Название
         link: Ссылка
+      menu:
+        name: Название меню
+        description: Описание меню
+        price: Цена меню
+      section:
+        name: Название
+        text: Текст
 
     add_images: Добавить изображения
 

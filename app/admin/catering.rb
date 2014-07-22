@@ -64,6 +64,19 @@ ActiveAdmin.register Catering do
         column :cost
       end
     end
+
+    panel 'Меню' do
+      table_for catering.menu, i18n: Menu do
+        column :name
+        column :description
+        column :price
+      end
+      table_for catering.menu.sections, i18n: Section do
+        column :name
+        column :text
+      end
+    end
+
     render 'admin/caterings/form_add_images'
   end
 
