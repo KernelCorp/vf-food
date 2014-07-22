@@ -19,7 +19,8 @@ class Catering
           }
       },
       convert_options:{
-          thumb: '-quality 100 -strip'
+          thumb: '-quality 100 -strip',
+          original: '-quality 100 -strip'
       },
       path: ':rails_root/public/system/images/:class/:id_partition/:style/:filename',
       url: '/system/images/:class/:id_partition/:style/:filename'

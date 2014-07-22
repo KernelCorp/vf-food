@@ -25,7 +25,8 @@ class GalleriesImage
       convert_options:{
           small: '-quality 100 -strip',
           thumb: '-quality 80 -strip',
-          full_size: '-quality 100 -strip'
+          full_size: '-quality 100 -strip',
+          original: '-quality 100 -strip'
       },
       path: ':rails_root/public/system/images/:class/:id_partition/:style/:filename',
       url: '/system/images/:class/:id_partition/:style/:filename'
