@@ -1,6 +1,7 @@
 button.button,
-a.button
-  background-color: hsl(0, 1%, 31%)
+a.button,
+input.submit
+  background-color: hsl(0, 2%, 16%)
   border: none
   box-shadow: 5px 5px 5px #000
   color: #f9f9f9
@@ -13,7 +14,48 @@ a.button
 
   &.center
     border: none
-    margin: 10px 0 40px 20%
+    margin: 40px 0 40px 20%
 
   &:focus
     outline: none
+
+  &.light
+    background-color: hsl(0, 2%, 31%)
+
+  &.wide
+    width: 220px
+
+.form_dark_background
+  background-color: hsl(0,2,16%)
+
+form.form,
+form.form-horizontal
+  background-color: hsl(330, 5%, 16%)
+  margin-left: -15px
+  margin-right: -15px
+  padding: 0 30px
+
+  div.form-group
+    margin:
+      bottom: 30px
+      left: 0
+
+  input, textarea
+    &:-ms-input-placeholder
+      color: rgb(0,0,0)
+    &::-moz-placeholder
+      color: rgb(0,0,0)
+    &::-webkit-input-placeholder
+      color: rgb(0,0,0)
+
+  .form-control
+    font-family: roboto_thin_italic, "Helvetica Neue", Helvetica, Arial, sans-serif
+    border-radius: 0
+    box-shadow: 0 2px 3px #000
+
+  .warning
+    font:
+      size: 24pt
+      weight: bold
+    line-height: 34px
+    padding-left: 0

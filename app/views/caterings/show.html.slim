@@ -1,15 +1,48 @@
 - content_for :meta
   = render '_meta/acts_as_page', page: @catering
 
-.container
-  #caterings_show.page
-    .master_class
-      .name = @catering.name
-      .text == @catering.text
 
-      .dishes
-        - @catering.dishes.each do |dish|
-          .dish
-            .name = dish.name
-            .description == dish.description
-            .cost = dish.cost
+.container#caterigns
+  .row
+    ul.menu
+      - @caterings.each do |mc_class|
+        li == link_to mc_class.name, mc_class, class: ('active'if mc_class == @catering)
+
+  .row.with_dark_background
+    .left_block.order_background
+      .right_block
+        .inner_container
+
+          .col-sm-5
+            .elem_to_hide.catering-slider.visible
+              - if @catering.images.count > 1
+                ul.bxslider
+                  - @catering.images.each do |image|
+                    li
+                      == image_tag image.attachment.url(:original)
+              - else
+                - @catering.images.each do |image|
+                  == image_tag image.attachment.url(:original)
+
+            = render 'orders/form', from: @catering.name
+
+
+          .col-sm-7
+            .h1 = @catering.name
+            == @catering.text
+
+            button.button.center.catering_menu Меню
+            button.button.center.catering_menu#catering_button Оставить заявку
+
+
+            .dishes
+              - @catering.dishes.each do |dish|
+                .dish
+                  .name = dish.name
+                  .description == dish.description
+                  .cost = dish.cost
+
+css:
+  body.caterings {
+    background: url("#{@catering.attachment.url}") bottom center no-repeat;
+  }

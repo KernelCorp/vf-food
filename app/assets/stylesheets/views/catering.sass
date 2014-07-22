@@ -1,0 +1,40 @@
+#caterigns
+  ul.menu
+    background-color: hsl(0,2,16%)
+    display: block
+    text-align: center
+
+    li a
+      padding: 6px 30px
+
+  div.catering-slider
+    margin-left: -15px
+
+  ul.bxslider
+    padding: 0
+
+
+  button.button
+    display: block
+    width: 220px
+
+  $left_container: 41.66666667%
+  $right_container: 100% - $left_container
+
+  .left_block
+    width: $left_container
+    float: left
+
+    &.dark_background
+      background-color: hsl(0,2,16%)
+
+  .right_block
+    background-color: transparent
+    width: $right_container / $left_container * 100%
+    float: left
+    margin: 0 0 0 100%
+
+  .inner_container
+    width: 100% / $right_container * 100%
+    margin-left: -$left_container / $right_container * 100%
+

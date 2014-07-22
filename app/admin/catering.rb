@@ -1,5 +1,5 @@
 ActiveAdmin.register Catering do
-  permit_params :name, :text, 
+  permit_params :name, :text, :attachment,
     seo_attributes: [:title, :description, :keywords],
     dishes_attributes: [:id, :name, :description, :cost]
 
@@ -31,14 +31,21 @@ ActiveAdmin.register Catering do
   index do
     selectable_column
     column :name
-    column :text
+    column :text do |catering|
+      raw catering.text
+    end
     default_actions
   end
 
   show do |catering|
     attributes_table do
       row :name
-      row :text
+      row :text do
+        raw catering.text
+      end
+      row :attachment do
+        image_tag(catering.attachment.url(:thumb))
+      end
     end
 
     panel 'SEO' do
@@ -63,6 +70,7 @@ ActiveAdmin.register Catering do
     f.inputs 'Страница' do
       f.input :name
       f.input :text
+      f.input :attachment, as: :file
     end
     f.inputs 'SEO', for: [:seo, f.object.seo] do |s|
       s.input :title
