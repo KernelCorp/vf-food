@@ -16,4 +16,7 @@
 //= require bootstrap-sprockets
 //= require vendor/jquery.bxslider.min
 //= require lib/consulting_gallery
+//= require lib/consulting_order
+//= require lib/catering_order
+//= require lib/catering
 //= require_tree .
