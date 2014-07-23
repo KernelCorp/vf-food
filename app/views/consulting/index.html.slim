@@ -1,7 +1,5 @@
 - content_for :meta do
-  title VF food | #{@consulting.seo.title}
-  meta name='description' content=@consulting.seo.description
-  meta name='keywords' content=@consulting.seo.keywords
+  = render '_meta/default'
 
 .container.full_height
   .row.consulting_block
