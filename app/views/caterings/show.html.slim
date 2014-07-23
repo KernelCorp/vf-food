@@ -14,7 +14,7 @@
         .inner_container
 
           .col-sm-5
-            .elem_to_hide.catering-slider.visible
+            .catering-slider
               - if @catering.images.count > 1
                 ul.bxslider
                   - @catering.images.each do |image|
@@ -24,6 +24,28 @@
                 - @catering.images.each do |image|
                   == image_tag image.attachment.url(:original)
 
+            .menu_block.hidden
+              - menu = @catering.menu
+              - unless menu.nil?
+                .border
+                  a.close_button href='#' x
+                  .menu_info
+                    .h3 = menu.name
+                    .description == menu.description
+                    .price
+                      ' Cтоимость:
+                      =' menu.price
+                      | рублей
+
+                  - menu.sections.each do |section|
+                    .menu_section
+                      .title = section.name
+                      == section.text
+
+
+
+
+
             = render 'orders/form', from: @catering.name
 
 
@@ -31,16 +53,8 @@
             .h1 = @catering.name
             == @catering.text
 
-            button.button.center.catering_menu Меню
-            button.button.center.catering_menu#catering_button Оставить заявку
-
-
-            .dishes
-              - @catering.dishes.each do |dish|
-                .dish
-                  .name = dish.name
-                  .description == dish.description
-                  .cost = dish.cost
+            button.button.center.catering_menu#catering_menu_button Меню
+            button.button.center.catering_menu#catering_order_button Оставить заявку
 
 css:
   body.caterings {
