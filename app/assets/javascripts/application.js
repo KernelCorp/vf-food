@@ -15,10 +15,8 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require vendor/jquery.bxslider.min
-//= require lib/consulting_gallery
-//= require lib/consulting_order
-//= require lib/catering_order
+//= require lib/consulting
 //= require lib/catering
-//= require lib/master_class_order
+//= require lib/master_class
 //= require lib/order
 //= require_tree .

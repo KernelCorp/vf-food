@@ -1,4 +1,3 @@
-
 consulting_gallery = ->
   slider = $('#consulting_slider ul')
   if !slider.children('li').length
@@ -24,5 +23,25 @@ consulting_gallery = ->
 
   return
 
-$(document).ready consulting_gallery
-$(document).on 'page:load', consulting_gallery
+consulting_order = (e)->
+  e.preventDefault()
+  order = $('#order_form')
+  is_hidden = order.hasClass('hidden')
+
+  # Hide other
+  if is_hidden
+    order.parent().addClass('form_dark_background')
+    order.removeClass('hidden')
+  else
+    order.parent().removeClass('form_dark_background')
+    order.addClass('hidden')
+
+  return
+
+consulting = ->
+  consulting_gallery()
+  $('#consulting_button').click consulting_order
+  return
+
+$(document).ready consulting
+$(document).on 'page:load', consulting
