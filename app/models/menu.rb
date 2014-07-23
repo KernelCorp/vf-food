@@ -6,7 +6,7 @@ class Menu
   field :price, type: String
 
   embeds_many :sections
-  accepts_nested_attributes_for :sections
+  accepts_nested_attributes_for :sections, allow_destroy: true
 
   embedded_in :catering
 
