@@ -9,7 +9,7 @@ describe OrdersController, :type => :controller do
     {
         name: 'order 1',
         email: 'e@mail.com',
-        phone: '123-44-56',
+        phone: '1234456',
         from: 'local',
         text: 'some order text'
     }
@@ -19,7 +19,7 @@ describe OrdersController, :type => :controller do
     {
         name: 'order 1',
         email: '@mail.com',
-        phone: '1234',
+        phone: '(383)-223-33-33',
         from: 'local',
         text: 'some order text'
     }
