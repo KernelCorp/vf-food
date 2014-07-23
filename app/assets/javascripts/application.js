@@ -19,4 +19,5 @@
 //= require lib/consulting_order
 //= require lib/catering_order
 //= require lib/catering
+//= require lib/order
 //= require_tree .

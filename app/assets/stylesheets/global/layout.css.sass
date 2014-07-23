@@ -83,6 +83,7 @@ html, body
   left: 0
   position: fixed
   width: 100%
+  z-index: 3
 
   .container
     font-size: 10px
@@ -133,6 +134,10 @@ a
     border-bottom: 1px solid white
     color: white
     text-decoration: none
+  &:focus
+    color: white
+    border: none
+    outline: none
 
 ul.menu
   display: inline-block
