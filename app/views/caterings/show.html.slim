@@ -33,14 +33,14 @@
                     .h3 = menu.name
                     .description == menu.description
                     .price
-                      ' Cтоимость:
+                      ' Стоимость:
                       =' menu.price
                       | рублей
 
                   - menu.sections.each do |section|
                     .menu_section
                       .title = section.name
-                      == section.text
+                      .text == section.text
 
 
 
@@ -51,7 +51,7 @@
 
           .col-sm-7
             .h1 = @catering.name
-            == @catering.text
+            .description == @catering.text
 
             button.button.center.catering_menu#catering_menu_button Меню
             button.button.center.catering_menu#catering_order_button Оставить заявку
