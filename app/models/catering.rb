@@ -3,6 +3,9 @@ class Catering
   include Mongoid::Paperclip
   include ActsAsPage
 
+  embeds_one :menu, class_name: 'Menu'
+  accepts_nested_attributes_for :menu
+
   embeds_many :dishes
   accepts_nested_attributes_for :dishes
 
