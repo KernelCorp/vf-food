@@ -55,6 +55,19 @@ ru:
       client:
         name: Название
         link: Ссылка
+      order:
+        name: Имя
+        email: e-mail
+        phone: Телефон
+        text: сообщение
+
+    errors:
+      messages:
+        blank: Поле не заполнено
+        invalid: Поле заполнено неверно
+        too_long: Поле длинное, max %{count}
+        too_short: Поле короткое, min %{count}
+
 
     add_images: Добавить изображения
 

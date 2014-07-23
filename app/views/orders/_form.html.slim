@@ -5,10 +5,13 @@
 
     .h3 Ваша заявка
 
+    p.bg-success.text-center.hidden Заяка отправлена
+
     .form-group
       .col-xs-10
         = f.text_field :name, class: 'form-control', placeholder: 'Ваше имя'
         .error_message.text-center
+
       .col-xs-2.warning
 
     .form-group
@@ -29,4 +32,6 @@
 
 
     .form-group.text-center
-      = f.submit 'Отправить', class: 'submit wide light'
+      = f.button class: 'button submit wide light center' do
+        'Отправить
+        span.glyphicon.glyphicon-repeat.spin

@@ -7,7 +7,9 @@ class Order
   field :from, type: String
   field :text, type: String
 
-  validates :name, presence: true, length: {minimun: 2, maximum: 255}
-  validates :phone, presence: true, length: {minimun: 5, maximum: 255}
-  validates :email, presence: true, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)[a-z]{2,})\z/i}
+  validates :name, presence: true, length: {minimum: 2, maximum: 120}
+  validates :phone, presence: true, length: {minimum: 5, maximum: 12},
+            format: {with: /\A\+?\d+\z/i}
+  validates :email, presence: true, length: {minimum: 2, maximum: 120},
+            format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)[a-z]{2,})\z/i}
 end
