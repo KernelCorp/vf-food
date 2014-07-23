@@ -13,7 +13,9 @@
     .col-sm-6
       .h1 == @master_class.name
 
-      button.button.center Заказать #{@master_class.name}
+      button.button.center#master_class_button Заказать #{@master_class.name}
 
     .col-sm-6
-      == @master_class.text
+      .elem_to_hide.visible
+        == @master_class.text
+      == render 'orders/form', from: @master_class.name
