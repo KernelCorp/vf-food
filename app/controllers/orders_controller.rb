@@ -1,6 +1,5 @@
-class OrdersController < ApplicationController
+class OrdersController < InheritedResources::Base
   respond_to :json
-  inherit_resources
   actions :create
 
   private
