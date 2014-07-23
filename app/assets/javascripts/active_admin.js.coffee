@@ -1,6 +1,6 @@
 #= require active_admin/base
 #= require lib/imagesController
-#= require fileuploader.js
+#= require vendor/fileuploader.js
 
 $(document).ready ->
   images = new(imagesController)
