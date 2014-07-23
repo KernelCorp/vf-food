@@ -57,14 +57,6 @@ ActiveAdmin.register Catering do
       end
     end
 
-    panel 'Блюда' do
-      table_for catering.dishes, i18n: Dish do
-        column :name
-        column :description
-        column :cost
-      end
-    end
-
     panel 'Меню' do
       table_for catering.menu, i18n: Menu do
         column :name
@@ -90,11 +82,6 @@ ActiveAdmin.register Catering do
       s.input :title
       s.input :description
       s.input :keywords
-    end
-    f.has_many :dishes, allow_destroy: true do |dish|
-      dish.input :name
-      dish.input :description, as: :text, input_html: { rows: 3 }
-      dish.input :cost
     end
 
     f.inputs 'Меню', for: [:menu, f.object.menu || f.object.build_menu] do |menu|

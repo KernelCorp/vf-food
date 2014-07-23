@@ -6,9 +6,6 @@ class Catering
   embeds_one :menu, class_name: 'Menu'
   accepts_nested_attributes_for :menu
 
-  embeds_many :dishes
-  accepts_nested_attributes_for :dishes
-
   embeds_many :images, as: :galleryimages, class_name: 'GalleriesImage'
   accepts_nested_attributes_for :images
 
@@ -29,4 +26,6 @@ class Catering
       url: '/system/images/:class/:id_partition/:style/:filename'
 
   validates_attachment_content_type :attachment, content_type: %w(image/jpg image/jpeg image/png)
+
+  after_initialize {build_menu}
 end
