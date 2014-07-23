@@ -27,5 +27,5 @@ class Catering
 
   validates_attachment_content_type :attachment, content_type: %w(image/jpg image/jpeg image/png)
 
-  after_initialize {build_menu}
+  after_initialize {build_menu if menu.nil?}
 end

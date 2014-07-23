@@ -2,7 +2,7 @@ ActiveAdmin.register Catering do
   permit_params :name, :text, :attachment,
     seo_attributes: [:title, :description, :keywords],
     dishes_attributes: [:id, :name, :description, :cost],
-    menu_attributes: [:name, :description, :price, sections_attributes: [:id, :name, :text]]
+    menu_attributes: [:name, :description, :price, sections_attributes: [:id, :name, :text, :_destroy]]
 
   config.filters = false
 
@@ -84,7 +84,7 @@ ActiveAdmin.register Catering do
       s.input :keywords
     end
 
-    f.inputs 'Меню', for: [:menu, f.object.menu || f.object.build_menu] do |menu|
+    f.inputs 'Меню', for: [:menu, f.object.menu] do |menu|
       menu.input :name
       menu.input :description, as: :text, input_html: { rows: 3 }
       menu.input :price
