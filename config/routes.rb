@@ -3,18 +3,19 @@ VfFood::Application.routes.draw do
   root 'welcome#index'
 
   resources :projects, only: [:index, :show]
-  resources :consulting
+  resources :consulting, only: [:index, :show]
 
-  resources :orders
+  resources :orders, only: :create
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   mount ActiveAdmin::Tinymce::Engine => '/', as: 'admin_editor'
 
-  resources :master_classes
-  resources :caterings
+  resources :master_classes, only: [:index, :show]
+  resources :caterings, only: [:index, :show]
   resources :about, only: :index
-  resources :clients
+  resources :clients, only: :index
+  resources :contacts, only: :index
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

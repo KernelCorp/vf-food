@@ -5,6 +5,7 @@ html
     == content_for(:meta) || render('_meta/default')
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
+    script type='text/javascript' src='http://maps.api.2gis.ru/2.0/loader.js?pkg=full&lazy=true' data-id='dgLoader'
     = csrf_meta_tags
 
   body class=controller.controller_name

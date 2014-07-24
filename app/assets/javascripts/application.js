@@ -19,4 +19,5 @@
 //= require lib/catering
 //= require lib/master_class
 //= require lib/order
+//= require lib/contact
 //= require_tree .

@@ -1,0 +1,18 @@
+- content_for :meta
+  title VF food | Контакты
+  meta name='description' content='VF food Контактные данные компании'
+  meta name='keywords' content='VF food конакты адрес телефон'
+
+#double-gis-map
+
+.container.full_height
+  .row
+    .col-sm-offset-6.col-sm-6.with_dark_background.index2
+      .h1 Контакты
+      p Новосибирск, ул. Семьи Шамшиных 18
+      p E-mail: vfcatering@mail.ru
+      p Телефон: +7 913 929 77 66
+
+      == render 'orders/form', from: 'Контакты', visible: true, title: 'У вас есть вопросы?'
+
+
