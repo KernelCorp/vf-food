@@ -76,12 +76,12 @@ ActiveAdmin.register Catering do
   form do |f|
     f.inputs 'Страница' do
       f.input :name
-      f.input :text
+      f.input :text, as: :text
       f.input :attachment, as: :file
     end
     f.inputs 'SEO', for: [:seo, f.object.seo] do |s|
       s.input :title
-      s.input :description
+      s.input :description, as: :text
       s.input :keywords
     end
 
@@ -91,7 +91,7 @@ ActiveAdmin.register Catering do
       menu.input :price
       menu.has_many :sections, allow_destroy: true do |section|
         section.input :name
-        section.input :text
+        section.input :text, as: :text
       end
     end
 
