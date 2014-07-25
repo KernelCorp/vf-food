@@ -9,7 +9,7 @@ RSpec.describe 'Clients', :type => :request do
       get clients_path
       list = Client.all
       list.each do |client|
-        assert_select '#clients-container #client-block a', href: client_path(client)
+        assert_select '#clients-container #client-block a', href: clients_path(client)
       end
     end
   end
