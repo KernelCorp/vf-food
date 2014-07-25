@@ -2,20 +2,28 @@ html, body
   height: 100%
 
 #main_wrapper
-  height: 100%
+  height: auto
+  min-height: 100%
   overflow: auto
   padding: 80px 0 50px
   position: relative
   width: 100%
 
-  >.container.full_height
+  .dark_container
     height: 100%
-
-    >.row
+    position: absolute
+    top: 0
+    width: inherit
+    z-index: 2
+    > div
       height: 100%
-      >div[class^='col-']
+      > div
+        margin: 0 -15px
         height: 100%
-        overflow: auto
+
+  .index3
+    position: relative
+    z-index: 3
 
 
   div.with_dark_background
@@ -24,6 +32,9 @@ html, body
   div.with_dark_background_85
     background-color: hsla(0, 0%, 0%, 0.85)
 
+  div.with_dark_background_100
+    background-color: hsl(0,2,16%)
+
 #header
   background-color: hsl(0, 1%, 31%)
   height: 80px
@@ -31,6 +42,7 @@ html, body
   text-align: center
   top: 0
   width: 100%
+  z-index: 3
 
   a.menu_logo_link
     border: none
@@ -81,7 +93,7 @@ html, body
   color: white
   height: 50px
   left: 0
-  position: fixed
+  position: absolute
   width: 100%
   z-index: 3
 

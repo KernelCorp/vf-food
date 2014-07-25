@@ -1,19 +1,25 @@
 - content_for :meta
   = render '_meta/acts_as_page', page: @consulting
 
-.container.full_height
+.container
+  .row.dark_container
+    .col-sm-6
+      .with_dark_background_100.left_block.hidden
+    .col-sm-6
+      .with_dark_background.right_block
+
   .row.consulting_block
     #consulting_slider
       ul
         - @consulting.images.each do |img|
           li: img src=img.attachment.url(:full_size)
 
-    .col-sm-6.consulting_layer
+    .col-sm-6.index3
       = render 'orders/form', from: @consulting.name
 
     a.slider_link.collapse#consulting_link href='#' >
 
-    .col-sm-6.with_dark_background.consulting_layer#consulting_description
+    .col-sm-6.index3#consulting_description
       - unless @consulting_next.nil?
         div.consulting_link_block
           = link_to @consulting_next.name, @consulting_next, class: 'next_consulting'

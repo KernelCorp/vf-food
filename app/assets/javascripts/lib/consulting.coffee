@@ -14,11 +14,18 @@ consulting_gallery = ->
   $('#consulting_link').click (e)->
     e.preventDefault()
     elem = $(this)
+    order = $('#order_form')
+    is_hidden = order.hasClass('hidden')
+    background = $('.dark_container .right_block')
     if elem.hasClass('collapse')
+      if !is_hidden
+        consulting_order(e)
       $('#consulting_description').hide()
+      background.addClass('hidden')
       elem.addClass('expand').removeClass('collapse').text('<')
     else
       $('#consulting_description').show()
+      background.removeClass('hidden')
       elem.addClass('collapse').removeClass('expand').text('>')
 
   return
@@ -26,14 +33,15 @@ consulting_gallery = ->
 consulting_order = (e)->
   e.preventDefault()
   order = $('#order_form')
+  background = $('.dark_container .left_block')
   is_hidden = order.hasClass('hidden')
 
   # Hide other
   if is_hidden
-    order.parent().addClass('form_dark_background')
+    background.removeClass('hidden')
     order.removeClass('hidden')
   else
-    order.parent().removeClass('form_dark_background')
+    background.addClass('hidden')
     order.addClass('hidden')
 
   return

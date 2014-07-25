@@ -3,7 +3,13 @@
 
 .container#master_classes_show
 
-  .row.with_dark_background
+  .row.dark_container
+    .col-sm-6
+      .with_dark_background
+    .col-sm-6
+      .with_dark_background
+
+  .row.index3
     == image_tag @master_class.attachment.url(:original), class: 'master_class_img'
 
     ul.menu

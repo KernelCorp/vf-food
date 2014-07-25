@@ -20,4 +20,5 @@
 //= require lib/master_class
 //= require lib/order
 //= require lib/contact
+//= require lib/layout
 //= require_tree .

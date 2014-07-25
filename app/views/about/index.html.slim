@@ -1,6 +1,11 @@
-.container.full_height
+.container
+  .row.dark_container
+    .col-sm-6
+      .with_dark_background_85
+    .col-sm-6
+      .with_dark_background_85
   #accordion.row.about_page
-    .col-sm-6.panel.with_dark_background_85
+    .col-sm-6.panel
       h1 &nbsp
       - i = 0
       - @about.each do |about|
@@ -14,7 +19,7 @@
 
 
 
-    .col-sm-6.with_dark_background_85
+    .col-sm-6
       h1 Наша команда
 
       - i = 0
