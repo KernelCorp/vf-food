@@ -19,6 +19,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 4.2.1'
 gem 'turbolinks'
+gem 'tinymce-rails'
 
 # various
 gem 'uglifier', '>= 1.3.0'
@@ -28,7 +29,6 @@ gem 'autoprefixer-rails'
 gem 'activeadmin',         github: 'gregbell/active_admin', ref: '65aae6b68e78aad3071b2f85242b19fd3fccf426'
 gem 'activeadmin-mongoid', github: 'elia/activeadmin-mongoid', branch: 'rails4'
 gem 'activeadmin-sortable'
-gem 'activeadmin_images'
 gem 'activeadmin_tinymce'
 
 #back

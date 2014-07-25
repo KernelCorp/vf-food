@@ -1,3 +1,4 @@
+#encoding: utf-8
 ActiveAdmin.register Catering do
   permit_params :name, :text, :attachment,
     seo_attributes: [:title, :description, :keywords],
