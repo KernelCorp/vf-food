@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-shared_examples 'Sending_order_form' do
-  context 'POST', js: true do
+shared_examples 'sending_order_form' do
+  describe 'POST', js: true do
     before do
       visit source_page
     end
-    it('invalid data') do
+    scenario 'invalid data' do
       if defined? order_button_name
         expect(page).to have_css('#order_form', visible: false)
         click_button order_button_name
@@ -23,7 +23,7 @@ shared_examples 'Sending_order_form' do
 
     end
 
-    it('valid data') do
+    scenario 'valid data' do
       if defined? order_button_name
         expect(page).to have_css('#order_form', visible: false)
         click_button order_button_name

@@ -15,14 +15,16 @@ RSpec.describe 'MasterClasses', :type => :request do
       @first = MasterClass.first
       get master_class_path(@first)
     end
+
+    it_behaves_like 'sending_order_form' do
+      let(:object_instance_name) { @first.name }
+      let(:order_button_name) { 'Заказать ' + @first.name }
+      let(:source_page) { master_class_path(@first) }
+    end
+
     context 'Show first master class' do
       it { assert_select '#master_classes_show .col-sm-6 .h1', text: @first.name }
       it { assert_select '#master_classes_show .col-sm-6 .elem_to_hide', html: @first.text }
-      it_behaves_like 'Sending_order_form' do
-        let(:object_instance_name) { @first.name }
-        let(:order_button_name) { 'Заказать ' + @first.name }
-        let(:source_page) { master_class_path(@first) }
-      end
     end
 
     context 'Other master class links on page' do

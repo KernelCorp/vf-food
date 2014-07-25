@@ -10,7 +10,7 @@ RSpec.describe 'Contacts', :type => :request do
       wait_for_ajax
       expect(page).to have_css('#double-gis-map div.leaflet-container')
     end
-    it_behaves_like 'Sending_order_form' do
+    it_behaves_like 'sending_order_form' do
       let(:object_instance_name) { 'contacts' }
       let(:source_page) { contacts_path }
     end
