@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'requests/orders_spec'
 
 RSpec.describe 'MasterClasses', :type => :request do
   describe 'GET /master_classes' do
