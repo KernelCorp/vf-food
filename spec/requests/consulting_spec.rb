@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'requests/orders_spec'
 
 RSpec.describe 'Consulting', type: :request do
   describe 'GET /consultings' do

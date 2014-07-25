@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'requests/orders_spec'
 
 RSpec.describe 'Contacts', :type => :request do
   describe 'GET /contacts', js: true do

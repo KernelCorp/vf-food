@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'requests/orders_spec'
 
 RSpec.describe 'Caterings', type: :request do
   describe 'GET /caterings' do
