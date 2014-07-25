@@ -1,25 +1,19 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/max/projects/vf-food/app/controllers/caterings_controller.rb": [
-        1,
-        null,
+      "/home/aleksey/git/vf-food/app/controllers/contacts_controller.rb": [
         1,
         1,
-        1,
-        null,
-        null,
-        1,
-        7,
-        7,
         null,
         null,
         null
       ],
-      "/home/max/projects/vf-food/app/models/menu.rb": [
+      "/home/aleksey/git/vf-food/app/models/order.rb": [
         1,
         1,
         null,
+        1,
+        1,
         1,
         1,
         1,
@@ -31,74 +25,19 @@
         null,
         null
       ],
-      "/home/max/projects/vf-food/app/models/section.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/home/max/projects/vf-food/app/models/galleries_image.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null
-      ],
-      "/home/max/projects/vf-food/app/models/order.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
+      "/home/aleksey/git/vf-food/app/controllers/orders_controller.rb": [
         1,
         1,
         1,
         null,
         1,
         1,
+        2,
         null,
-        1,
         null,
         null
       ]
     },
-    "timestamp": 1406118386
+    "timestamp": 1406273187
   }
 }
