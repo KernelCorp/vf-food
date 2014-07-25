@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'requests/orders_spec'
 
 RSpec.describe 'Caterings', type: :request do
   describe 'GET /caterings' do
@@ -18,6 +19,11 @@ RSpec.describe 'Caterings', type: :request do
       # Show page contain header and description
       it { assert_select '#caterigns .col-sm-7 .h1', text: @first.name }
       it { assert_select '#caterigns .col-sm-7 .description', html: @first.text }
+      it_behaves_like 'Sending_order_form' do
+        let(:object_instance_name) { @first.name }
+        let(:order_button_name) { 'Оставить заявку' }
+        let(:source_page) { catering_path(@first) }
+      end
     end
 
     context 'First catering have other catering links' do
