@@ -29,7 +29,8 @@ class GalleriesImage
           original: '-quality 100 -strip'
       },
       path: ':rails_root/public/system/images/:class/:id_partition/:style/:filename',
-      url: '/system/images/:class/:id_partition/:style/:filename'
+      url: '/system/images/:class/:id_partition/:style/:filename',
+      default_url: ActionController::Base.helpers.asset_path('missing.png')
 
   embedded_in :galleryimages, polymorphic: true
 
