@@ -14,4 +14,10 @@ html
 
       == yield
 
-      #footer: .container &copy; #{Time.now.year} VF food, All rights reserved
+      #footer
+        .container
+          #vf-food-copyrights &copy; #{Time.now.year} VF food, All rights reserved
+          #kerweb-copyrights
+            | Сайт разработан в&nbsp
+            a href='http://kerweb.ru' target='_blank'
+              | Kernel web studio
