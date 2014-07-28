@@ -36,7 +36,7 @@ ActiveAdmin.register MasterClass do
   form do |f|
     f.inputs 'Страница' do
       f.input :name
-      f.input :text
+      f.input :text, as: :text
       f.input :attachment, as: :file
     end
     f.inputs 'SEO', for: [:seo, f.object.seo] do |s|

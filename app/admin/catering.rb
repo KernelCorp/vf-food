@@ -81,7 +81,7 @@ ActiveAdmin.register Catering do
     end
     f.inputs 'SEO', for: [:seo, f.object.seo] do |s|
       s.input :title
-      s.input :description, as: :text
+      s.input :description
       s.input :keywords
     end
 
