@@ -11,16 +11,27 @@ input.submit
   font-size: 14px
   outline: none
   padding: 14px 36px
+  position: relative
 
   &.center
     border: none
     margin: 0 0 28px 20%
 
-  &:focus
+  &:active
+    box-shadow: none
+    top: 5px
+    left: 5px
+
+  &:focus,
+  &:hover
     outline: none
+    background-color: hsl(0, 2%, 25%)
 
   &.light
     background-color: hsl(0, 2%, 31%)
+    &:focus,
+    &:hover
+      background-color: hsl(0, 2%, 35%)
 
   &.wide
     width: 220px
@@ -74,9 +85,15 @@ form.form-horizontal
   .error_message
     min-height: 20px
 
-  [class*=bg-]
-    color: #222
-    padding: 8px
+  .bg-success
+    background: transparent
+    color: white
+    margin-left: 20px
+    width: 80%
+
+  #order_button_success
+    margin-top: 60px
+
 
 @-moz-keyframes spin
   0%
