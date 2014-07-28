@@ -7,4 +7,4 @@
   #inside-container
     - @clients.each do |client|
       #client-block style="background-image: url(#{client.attachment.url(:original)})"
-        a{href= client.link}
+        a{href= client.link target='_blank'}
