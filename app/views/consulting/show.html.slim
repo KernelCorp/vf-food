@@ -12,7 +12,7 @@
     #consulting_slider
       ul
         - @consulting.images.each do |img|
-          li: img src=img.attachment.url(:full_size)
+          li: img src=img.attachment.url(:origin)
 
     .col-sm-6.index3
       = render 'orders/form', from: @consulting.name
