@@ -1,7 +1,7 @@
 - content_for :meta
   = render '_meta/acts_as_page', page: @consulting
 
-.consulting.dark_container
+.consulting
   #consulting_slider
     ul
       - @consulting.images.each do |img|
@@ -19,7 +19,7 @@
     .col-sm-6.index3
       = render 'orders/form', from: @consulting.name
 
-    a.slider_link.collapse#consulting_link href='#' >
+    a.slider_link.collapse#consulting_link href='#'
 
     .col-sm-6.index3#consulting_description
       - unless @consulting_next.nil?
