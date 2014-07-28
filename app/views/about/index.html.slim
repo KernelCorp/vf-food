@@ -1,23 +1,20 @@
 .container
   .row.dark_container
     .col-sm-6
-      .with_dark_background_85
     .col-sm-6
       .with_dark_background_85
   #accordion.row.about_page
-    .col-sm-6.panel
+    .col-sm-6.panel id='left-about'
       h1 &nbsp
       - i = 0
       - @about.each do |about|
-
-        .collapse id="chief_#{i}" class=(i += 1)==1?'in':nil
+        - i = i + 1
+        .collapse id="chief_#{i}"
           .col-md-4
             ==image_tag about.attachment.url(:thumb), alt: 'chief'
           .col-md-7
             .h3.first_line == about.name
             .chief_biography == about.text
-
-
 
     .col-sm-6
       h1 Наша команда
@@ -25,7 +22,8 @@
       p
         - i = 0
         - @about.each do |about|
-          a.chief_link class=(i += 1)>1?'collapsed':nil data-parent=\
+          - i = i + 1
+          a.chief_link class='collapsed' data-parent=\
             "#accordion" data-toggle="collapse" href="#chief_#{i}" == about.name
 
 
