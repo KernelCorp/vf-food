@@ -14,18 +14,11 @@ class GalleriesImage
               geometry: "150x150#",
               # watermark_path: "#{Rails.root}/public/images/watermark.png",
               position: 'SouthWest'
-          },
-          full_size: {
-              geometry: "1024>",
-              # watermark_path: "#{Rails.root}/public/images/watermark.png",
-              position: 'SouthWest'
           }
-
       },
       convert_options:{
           small: '-quality 100 -strip',
           thumb: '-quality 80 -strip',
-          full_size: '-quality 100 -strip',
           original: '-quality 100 -strip'
       },
       path: ':rails_root/public/system/images/:class/:id_partition/:style/:filename',

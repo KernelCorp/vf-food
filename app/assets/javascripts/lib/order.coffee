@@ -1,7 +1,14 @@
+hide_success = (e)->
+  e.preventDefault()
+  $('#order_form .bg-success').addClass('hidden')
+  $('#order_form .form-group').removeClass('hidden')
+  return
+
 success_result = (data) ->
   $('#order_form .error_message').empty()
   $('#order_form .warning').empty()
   $('#order_form .submit').removeAttr('disabled')
+  $('#order_form .form-group').addClass('hidden')
   $('#order_form .bg-success').removeClass('hidden')
   $('#order_form').get(0).reset()
   return
@@ -37,6 +44,7 @@ submit_form = (e) ->
 
 order_form = ->
   $('#order_form').submit submit_form
+  $('#order_form #order_button_success').click hide_success
   return
 
 $(document).ready order_form

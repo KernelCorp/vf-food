@@ -3,9 +3,16 @@
 
     = f.hidden_field :from
 
-    .h3 = (defined?(title) && title != false) ? title : 'Ваша заявка'
+    .h3 class=(defined?(title_class) ? title_class : nil)
+      = (defined?(title) && title != false) ? title : 'Ваша заявка'
 
-    p.bg-success.text-center.hidden Отправлено успешно
+    div.bg-success.hidden
+      p
+        | Благодарим за обращение в нашу компанию!
+        br
+        | В ближайшее время с вами свяжется менеджер для уточнения деталей.
+      p.text-center
+        button.button.wide.light#order_button_success OK
 
     .form-group
       .col-xs-10

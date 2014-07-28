@@ -22,10 +22,11 @@
     .col-sm-6
       h1 Наша команда
 
-      - i = 0
-      - @about.each do |about|
-        a.chief_link class=(i += 1)>1?'collapsed':nil data-parent=\
-          "#accordion" data-toggle="collapse" href="#chief_#{i}" == about.name
+      p
+        - i = 0
+        - @about.each do |about|
+          a.chief_link class=(i += 1)>1?'collapsed':nil data-parent=\
+            "#accordion" data-toggle="collapse" href="#chief_#{i}" == about.name
 
 
       p Созданная двумя шеф-поварами в 2012 году, компания VFcatering успешно работает в области ресторанного бизнеса, гостеприимства и еды.
