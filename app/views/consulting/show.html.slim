@@ -2,17 +2,17 @@
   = render '_meta/acts_as_page', page: @consulting
 
 .container
-  .row.dark_container
+  .row.dark_container.consulting
+    #consulting_slider
+      ul
+        - @consulting.images.each do |img|
+          li: img src=img.attachment.url(:original)
     .col-sm-6
       .with_dark_background_100.left_block.hidden
     .col-sm-6
       .with_dark_background.right_block
 
   .row.consulting_block
-    #consulting_slider
-      ul
-        - @consulting.images.each do |img|
-          li: img src=img.attachment.url(:original)
 
     .col-sm-6.index3
       = render 'orders/form', from: @consulting.name
