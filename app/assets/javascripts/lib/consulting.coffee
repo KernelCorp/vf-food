@@ -7,7 +7,7 @@ consulting_gallery = ->
   $(slider).bxSlider({
     mode: 'fade',
     controls: false,
-    pager: false,
+    pager: true,
     auto: 3000
   })
 
@@ -22,11 +22,11 @@ consulting_gallery = ->
         consulting_order(e)
       $('#consulting_description').hide()
       background.addClass('hidden')
-      elem.addClass('expand').removeClass('collapse').text('<')
+      elem.addClass('expand').removeClass('collapse')
     else
       $('#consulting_description').show()
       background.removeClass('hidden')
-      elem.addClass('collapse').removeClass('expand').text('>')
+      elem.addClass('collapse').removeClass('expand')
 
   return
 

@@ -1,10 +1,28 @@
 div.consulting
+  position: absolute
+  width: 100%
+  top: 80px
+  bottom: 50px
   div#consulting_slider
     position: absolute
     height: 100%
     width: 100%
     overflow: hidden
 
+    .bx-wrapper,
+    .bx-viewport
+      max-height: 100%
+
+      .bx-pager.bx-default-pager a
+        border: 2px solid #ccc
+        outline: none
+        width: 15px
+        height: 15px
+        border-radius: 8px
+
+    .bx-wrapper .bx-pager,
+    .bx-wrapper .bx-controls-auto
+      bottom: 5px
 
 div.consulting_block
   position: relative
@@ -16,26 +34,23 @@ div.consulting_block
     z-index: 3
 
   a.slider_link
-    background-color: hsla(0, 0, 0, 0.6)
+    background: image_url('consulting_arrow.png') 0 0 no-repeat
     border: none
-    border-radius: 40px 0 0 40px
     display: block
-    font-family: roboto_thin, geometria_light, "Helvetica Neue", Helvetica, Arial, sans-serif
-    font-size: 60px
     height: 80px
     right: 50%
     line-height: 68px
-    padding-left: 8px
     position: absolute
     top: 150px
     width: 40px
     z-index: 3
 
     &.expand
+      background-position: -40px 0
       right: 0
 
     &:hover
-      background-color: hsla(0, 0, 20%, 0.6)
+      opacity: 0.8
       border: none
 
 
