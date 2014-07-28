@@ -3,7 +3,8 @@
 
     = f.hidden_field :from
 
-    .h3 = (defined?(title) && title != false) ? title : 'Ваша заявка'
+    .h3 class=(defined?(title_class) ? title_class : nil)
+      = (defined?(title) && title != false) ? title : 'Ваша заявка'
 
     p.bg-success.text-center.hidden Отправлено успешно
 
