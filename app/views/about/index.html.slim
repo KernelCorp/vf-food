@@ -4,12 +4,12 @@
     .col-sm-6
       .with_dark_background_85
   #accordion.row.about_page
-    .col-sm-6.panel id='left-about'
-      h1 &nbsp
+    .col-sm-6.panel.with_dark_background_85 id='left-about'
       - i = 0
       - @about.each do |about|
         - i = i + 1
         .collapse id="chief_#{i}"
+          #faceless_void
           .col-md-4
             ==image_tag about.attachment.url(:thumb), alt: 'chief'
           .col-md-7
