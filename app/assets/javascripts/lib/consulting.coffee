@@ -1,15 +1,60 @@
+get_hex_image_color = (path, callback)->
+  canvas = document.createElement('canvas')
+  cntx = canvas.getContext('2d')
+  img = new Image()
+  img.onload = ->
+    canvas.width = img.width
+    canvas.height = img.height
+    cntx.drawImage(img, 0, 0)
+    data = cntx.getImageData(10,10,11,11).data
+    res = ''
+    # exclude alpha channel
+    res += data[i].toString(16) for i in [0...3]
+    callback(res)
+    return
+  img.src = path
+  return
+
+gallery_background = []
+
+set_background = (el, oldIndex, newIndex)->
+  document.body.style.backgroundColor = '#' + gallery_background[newIndex]
+  return
+
+prepare_background_colors = (li_list)->
+  li_list.each (i)->
+    li = $(this)
+    img = li.children()
+    path = img.attr('src')
+    get_hex_image_color path, (color)->
+      gallery_background[i] = color
+      li.css('background-color', '#'+color)
+      if i == 0
+        set_background(null, null, i)
+      return
+    return
+  return
+
 consulting_gallery = ->
   slider = $('#consulting_slider ul')
-  if !slider.children('li').length
+  li_list = slider.children('li')
+  if !li_list.length
     $('#consulting_link').hide()
     return
+
+  prepare_background_colors(li_list)
 
   $(slider).bxSlider({
     mode: 'fade',
     controls: false,
     pager: true,
-    auto: 3000
+    auto: 3000,
+    speed: 2000,
+    easing: 'ease',
+    onSlideBefore: set_background
   })
+
+  document.body.style.transition = 'background-color 2s ease 0'
 
   $('#consulting_link').click (e)->
     e.preventDefault()
