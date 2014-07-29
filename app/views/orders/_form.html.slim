@@ -3,9 +3,8 @@
 
     = f.hidden_field :from
 
-    .col-xs-10
-      .h3 class=(defined?(title_class) ? title_class : nil)
-        = (defined?(title) && title != false) ? title : 'Ваша заявка'
+    .h3 class=(defined?(title_class) ? title_class : nil)
+      = (defined?(title) && title != false) ? title : 'Ваша заявка'
 
     div.bg-success.hidden
       p
@@ -16,31 +15,31 @@
         button.button.wide.light#order_button_success OK
 
     .form-group
-      .col-xs-10
+      .col-xs-12
         = f.text_field :name, class: 'form-control', placeholder: 'Ваше имя'
         .error_message.text-center
 
-      .col-xs-2.warning
+      .col-xs-1.warning
 
     .form-group
-      .col-xs-10
+      .col-xs-12
         = f.text_field :phone, class: 'form-control', placeholder: 'Ваш телефон'
         .error_message.text-center
-      .col-xs-2.warning
+      .col-xs-1.warning
 
     .form-group
-      .col-xs-10
+      .col-xs-12
         = f.text_field :email, class: 'form-control', placeholder: 'Ваш e-mail'
         .error_message.text-center
-      .col-xs-2.warning
+      .col-xs-1.warning
 
     .form-group
-      .col-xs-10
+      .col-xs-12
         = f.text_area :text, class: 'form-control', placeholder: 'Ваш текст'
 
 
     .form-group.text-center.margin-40
-      .col-xs-10
+      .col-xs-12
         = f.button class: 'button submit wide light' do
           'Отправить
           span.glyphicon.glyphicon-repeat.spin
