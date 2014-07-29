@@ -37,6 +37,8 @@ prepare_background_colors = (li_list)->
 
 consulting_gallery = ->
   slider = $('#consulting_slider ul')
+  if !slider
+    return
   li_list = slider.children('li')
   if !li_list.length
     $('#consulting_link').hide()
@@ -44,7 +46,7 @@ consulting_gallery = ->
 
   prepare_background_colors(li_list)
 
-  $(slider).bxSlider({
+  slider = $(slider).bxSlider({
     mode: 'fade',
     controls: false,
     pager: true,
@@ -54,8 +56,17 @@ consulting_gallery = ->
     onSlideBefore: set_background
   })
 
-  document.body.style.transition = 'background-color 2s ease 0'
+  slider_destructor = ->
+    slider.destroySlider()
+    $(document).off 'page:fetch', slider_destructor
+    return
 
+  $(document).on 'page:fetch', slider_destructor
+
+  document.body.style.transition = 'background-color 2s ease 0'
+  return
+
+consulting_link_trigger = ->
   $('#consulting_link').click (e)->
     e.preventDefault()
     elem = $(this)
@@ -73,6 +84,7 @@ consulting_gallery = ->
       background.removeClass('hidden')
       elem.addClass('collapse').removeClass('expand')
 
+    return
   return
 
 consulting_order_trigger = (e)->
@@ -93,6 +105,7 @@ consulting_order_trigger = (e)->
 
 consulting = ->
   consulting_gallery()
+  consulting_link_trigger()
   $('#consulting_button').click consulting_order_trigger
   return
 
