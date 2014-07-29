@@ -16,10 +16,10 @@ consulting_gallery = ->
     elem = $(this)
     order = $('#order_form')
     is_hidden = order.hasClass('hidden')
-    background = $('.dark_container .right_block')
+    background = $('.dark_container')
     if elem.hasClass('collapse')
       if !is_hidden
-        consulting_order(e)
+        consulting_order_trigger(e)
       $('#consulting_description').hide()
       background.addClass('hidden')
       elem.addClass('expand').removeClass('collapse')
@@ -30,7 +30,7 @@ consulting_gallery = ->
 
   return
 
-consulting_order = (e)->
+consulting_order_trigger = (e)->
   e.preventDefault()
   order = $('#order_form')
   background = $('.dark_container .left_block')
@@ -48,7 +48,7 @@ consulting_order = (e)->
 
 consulting = ->
   consulting_gallery()
-  $('#consulting_button').click consulting_order
+  $('#consulting_button').click consulting_order_trigger
   return
 
 $(document).ready consulting
