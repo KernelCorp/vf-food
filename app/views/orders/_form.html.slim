@@ -3,8 +3,9 @@
 
     = f.hidden_field :from
 
-    .h3 class=(defined?(title_class) ? title_class : nil)
-      = (defined?(title) && title != false) ? title : 'Ваша заявка'
+    .col-xs-10
+      .h3 class=(defined?(title_class) ? title_class : nil)
+        = (defined?(title) && title != false) ? title : 'Ваша заявка'
 
     div.bg-success.hidden
       p
@@ -39,6 +40,7 @@
 
 
     .form-group.text-center.margin-40
-      = f.button class: 'button submit wide light' do
-        'Отправить
-        span.glyphicon.glyphicon-repeat.spin
+      .col-xs-10
+        = f.button class: 'button submit wide light' do
+          'Отправить
+          span.glyphicon.glyphicon-repeat.spin
