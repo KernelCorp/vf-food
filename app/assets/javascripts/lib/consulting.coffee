@@ -35,31 +35,34 @@ prepare_background_colors = (li_list)->
     return
   return
 
-consulting_slider = null
-consulting_slider_settings =
-  mode: 'fade',
-  controls: false,
-  pager: false,
-  startSlide: 0,
-  auto: 3000,
-  speed: 2000,
-  easing: 'ease',
-  onSlideBefore: set_background
+consulting_slider_ul = null
 
 consulting_gallery = ->
-  slider = $('#consulting_slider ul')
-  if !slider
+  consulting_slider_ul = $('#consulting_slider ul')
+  if !consulting_slider_ul
     return
-  li_list = slider.children('li')
+  li_list = consulting_slider_ul.children('li')
   if !li_list.length
     $('#consulting_link').hide()
     return
 
   prepare_background_colors(li_list)
 
-  consulting_slider_settings.startSlide = 0
-  consulting_slider_settings.pager = false
-  consulting_slider = $(slider).bxSlider consulting_slider_settings
+  hide_slider_pager = ->
+    consulting_slider_ul.parents('.bx-wrapper').find('.bx-default-pager').addClass('hidden')
+    return
+
+  consulting_slider = $(consulting_slider_ul).bxSlider
+    mode: 'fade',
+    controls: false,
+    pager: true,
+    startSlide: 0,
+    auto: 3000,
+    speed: 300,
+    easing: 'ease',
+    onSlideBefore: set_background,
+    onSliderLoad: hide_slider_pager
+
 
   slider_destructor = ->
     consulting_slider.destroySlider()
@@ -68,7 +71,7 @@ consulting_gallery = ->
 
   $(document).on 'page:fetch', slider_destructor
 
-  document.body.style.transition = 'background-color 2s ease 0'
+  document.body.style.transition = 'background-color 300ms ease 0'
   return
 
 consulting_link_trigger = ->
@@ -78,8 +81,7 @@ consulting_link_trigger = ->
     order = $('#order_form')
     order_is_hidden = order.hasClass('hidden')
     background = $('.dark_container')
-    # Reloaded slider start from current slide
-    consulting_slider_settings.startSlide = consulting_slider.getCurrentSlide()
+
     # If next method collapse - do it
     if elem.hasClass('collapse')
       # Hide order form if showed
@@ -90,16 +92,14 @@ consulting_link_trigger = ->
       # Hide background for description
       background.addClass('hidden')
       # show pager for slider
-      consulting_slider_settings.pager = true
-      consulting_slider.reloadSlider consulting_slider_settings
+      consulting_slider_ul.parents('.bx-wrapper').find('.bx-default-pager').removeClass('hidden')
       elem.addClass('expand').removeClass('collapse')
     else
       # else next method expand
       $('#consulting_description').show()
       background.removeClass('hidden')
       # hide pager for slider
-      consulting_slider_settings.pager = false
-      consulting_slider.reloadSlider consulting_slider_settings
+      consulting_slider_ul.parents('.bx-wrapper').find('.bx-default-pager').addClass('hidden')
       elem.addClass('collapse').removeClass('expand')
     return
   return
