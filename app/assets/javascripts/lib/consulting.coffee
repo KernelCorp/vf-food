@@ -35,6 +35,17 @@ prepare_background_colors = (li_list)->
     return
   return
 
+consulting_slider = null
+consulting_slider_settings =
+  mode: 'fade',
+  controls: false,
+  pager: false,
+  startSlide: 0,
+  auto: 3000,
+  speed: 2000,
+  easing: 'ease',
+  onSlideBefore: set_background
+
 consulting_gallery = ->
   slider = $('#consulting_slider ul')
   if !slider
@@ -46,18 +57,12 @@ consulting_gallery = ->
 
   prepare_background_colors(li_list)
 
-  slider = $(slider).bxSlider({
-    mode: 'fade',
-    controls: false,
-    pager: true,
-    auto: 3000,
-    speed: 2000,
-    easing: 'ease',
-    onSlideBefore: set_background
-  })
+  consulting_slider_settings.startSlide = 0
+  consulting_slider_settings.pager = false
+  consulting_slider = $(slider).bxSlider consulting_slider_settings
 
   slider_destructor = ->
-    slider.destroySlider()
+    consulting_slider.destroySlider()
     $(document).off 'page:fetch', slider_destructor
     return
 
@@ -71,19 +76,31 @@ consulting_link_trigger = ->
     e.preventDefault()
     elem = $(this)
     order = $('#order_form')
-    is_hidden = order.hasClass('hidden')
+    order_is_hidden = order.hasClass('hidden')
     background = $('.dark_container')
+    # Reloaded slider start from current slide
+    consulting_slider_settings.startSlide = consulting_slider.getCurrentSlide()
+    # If next method collapse - do it
     if elem.hasClass('collapse')
-      if !is_hidden
+      # Hide order form if showed
+      if !order_is_hidden
         consulting_order_trigger(e)
+      # Hide description
       $('#consulting_description').hide()
+      # Hide background for description
       background.addClass('hidden')
+      # show pager for slider
+      consulting_slider_settings.pager = true
+      consulting_slider.reloadSlider consulting_slider_settings
       elem.addClass('expand').removeClass('collapse')
     else
+      # else next method expand
       $('#consulting_description').show()
       background.removeClass('hidden')
+      # hide pager for slider
+      consulting_slider_settings.pager = false
+      consulting_slider.reloadSlider consulting_slider_settings
       elem.addClass('collapse').removeClass('expand')
-
     return
   return
 
