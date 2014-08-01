@@ -3,7 +3,7 @@ last_elem = null
 catering_gallery = ->
   $('#caterigns ul.bxslider').bxSlider({
     mode: 'fade',
-    controls: false,
+    controls: true,
     pager: false,
     auto: 3000
   })

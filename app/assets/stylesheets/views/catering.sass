@@ -9,17 +9,38 @@
 
   div.catering-slider
     margin-left: -15px
+    width: 416px
 
     img
       margin: 0
-      max-height: 100%
       max-width: 100%
+
+    a
+      border: none
+
+      &:hover
+        border: none
+
+    .bx-wrapper .bx-controls-direction a
+      height: 30px
+      width: 30px
+
+    .bx-wrapper .bx-prev
+      background: image_url('catering_arrows.png') -40px 0
+      &:hover
+        background-position: -40px -40px
+
+    .bx-wrapper .bx-next
+      background: image_url('catering_arrows.png') 0 0
+      &:hover
+        background-position: 0 -40px
 
   .description
     margin-bottom: 30px
 
   ul.bxslider
     padding: 0
+
 
 
 
