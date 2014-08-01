@@ -34,7 +34,6 @@ before 'deploy:setup', 'rvm:install_rvm', 'rvm:install_ruby'
 
 
 after 'deploy:update', 'deploy:cleanup'
-after 'deploy', 'deploy:restart'
 
 # Далее идут правила для перезапуска unicorn. Их стоит просто принять на веру - они работают.
 # В случае с Rails 3 приложениями стоит заменять bundle exec unicorn_rails на bundle exec unicorn

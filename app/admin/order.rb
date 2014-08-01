@@ -9,7 +9,7 @@ ActiveAdmin.register Order do
   index do
     selectable_column
     column :created_at do |order|
-      order.created_at.strftime t(:short, scope:[:date, :formats])
+      order.created_at.try :strftime, t(:short, scope:[:date, :formats])
     end
     column :name
     column :phone
