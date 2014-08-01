@@ -6,6 +6,15 @@ ru:
     text: Текст
     attachment: Изображение
 
+  date:
+    formats:
+      long: '%d %B %Y'
+      short: '%d-%m-%Y'
+  time:
+    formats:
+      long: '%d-%m-%Y %H:%M:%S'
+      short: '%d-%m-%Y %H:%M'
+
   mongoid: &mongoid
     models:
       about:
@@ -54,6 +63,12 @@ ru:
         many:  Секций
         other: Секции
 
+      order:
+        one:   Заказ
+        few:   Заказы
+        many:  Заказов
+        other: Заказы
+
     attributes:
       acts_as_page/seo:
         title: SEO-заголовок
@@ -73,10 +88,13 @@ ru:
         name: Название
         text: Текст
       order:
+        created_at: Дата создания
+        updated_at: Дата изменения
+        from: Страница-источник
         name: Имя
         email: e-mail
         phone: Телефон
-        text: сообщение
+        text: Сообщение
 
     errors:
       messages:
@@ -87,5 +105,12 @@ ru:
 
 
     add_images: Добавить изображения
+
+  views:
+    pagination:
+      next: Следующая
+      last: Последняя
+      first: Первая
+      previous: Предыдущая
 
   activerecord: *mongoid
