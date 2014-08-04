@@ -42,9 +42,10 @@ consulting_gallery = ->
   if !consulting_slider_ul
     return
   li_list = consulting_slider_ul.children('li')
-  if !li_list.length
+  if li_list.length < 2
     $('#consulting_link').hide()
-    return
+    if !li_list.length
+      return
 
   prepare_background_colors(li_list)
 
