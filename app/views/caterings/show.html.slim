@@ -53,7 +53,7 @@
             .h1 = @catering.name
             .description == @catering.text
 
-            - unless @catering.menu.nil? or @catering.menu.name.nil?
+            - unless @catering.menu.name.nil? or @catering.menu.name.length == 0
               button.button.center.catering_menu#catering_menu_button Меню
             button.button.center.catering_menu#catering_order_button Написать нам
 
