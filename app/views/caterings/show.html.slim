@@ -26,7 +26,7 @@
 
             .menu_block.hidden
               - menu = @catering.menu
-              - unless menu.nil?
+              - unless menu.name.nil?
                 .border
                   a.close_button href='#' x
                   .menu_info
@@ -53,7 +53,8 @@
             .h1 = @catering.name
             .description == @catering.text
 
-            button.button.center.catering_menu#catering_menu_button Меню
+            - unless @catering.menu.name.nil?
+              button.button.center.catering_menu#catering_menu_button Меню
             button.button.center.catering_menu#catering_order_button Написать нам
 
 css:
