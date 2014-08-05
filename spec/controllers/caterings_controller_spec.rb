@@ -33,7 +33,7 @@ describe CateringsController do
     it 'show page contain all caterings' do
       get :show, id: @catering.id
       3.times{ create :catering }
-      all = Catering.order_by(:name.asc).all
+      all = Catering.order_by(:position.asc).all
       expect(assigns(:caterings)).to eq all
     end
   end

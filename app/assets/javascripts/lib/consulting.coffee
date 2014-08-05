@@ -76,12 +76,14 @@ consulting_gallery = ->
   return
 
 consulting_link_trigger = ->
+  animation_duration = 1000
   $('#consulting_link').click (e)->
     e.preventDefault()
     elem = $(this)
     order = $('#order_form')
     order_is_hidden = order.hasClass('hidden')
     background = $('.dark_container')
+    description = $('#consulting_description')
 
     # If next method collapse - do it
     if elem.hasClass('collapse')
@@ -89,19 +91,28 @@ consulting_link_trigger = ->
       if !order_is_hidden
         consulting_order_trigger(e)
       # Hide description
-      $('#consulting_description').hide()
+      elem.hide()
+      description.height(description.height())
+      description.animate left: '110%', animation_duration, ->
+        elem.addClass('expand').removeClass('collapse').show()
+        return
       # Hide background for description
-      background.addClass('hidden')
-      # show pager for slider
-      consulting_slider_ul.parents('.bx-wrapper').find('.bx-default-pager').removeClass('hidden')
-      elem.addClass('expand').removeClass('collapse')
+      background.children().animate width: 'hide', left: '100%', animation_duration, ->
+        background.hide()
+        # show pager for slider
+        consulting_slider_ul.parents('.bx-wrapper').find('.bx-default-pager').removeClass('hidden')
+        return
     else
       # else next method expand
-      $('#consulting_description').show()
-      background.removeClass('hidden')
+      elem.hide()
+      description.animate left: '0%', animation_duration, ->
+        description.height('auto')
+        elem.addClass('collapse').removeClass('expand').show()
+        return
+      background.show()
+      background.children().animate width: 'show', left: '0', animation_duration
       # hide pager for slider
       consulting_slider_ul.parents('.bx-wrapper').find('.bx-default-pager').addClass('hidden')
-      elem.addClass('collapse').removeClass('expand')
     return
   return
 

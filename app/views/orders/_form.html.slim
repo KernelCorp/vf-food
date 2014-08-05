@@ -3,8 +3,9 @@
 
     = f.hidden_field :from
 
-    .h3 class=(defined?(title_class) ? title_class : nil)
-      = (defined?(title) && title != false) ? title : 'Ваша заявка'
+    .form-group
+      .h3 class=(defined?(title_class) ? title_class : nil)
+        = (defined?(title) && title != false) ? title : 'Ваша заявка'
 
     div.bg-success.hidden
       p

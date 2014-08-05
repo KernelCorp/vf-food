@@ -3,9 +3,15 @@ ActiveAdmin.register MasterClass do
   permit_params :name, :text, :attachment, seo_attributes: [:title, :description, :keywords]
 
   config.filters = false
+  config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_list column
+  config.paginate   = false # optional; drag-and-drop across pages is not supported
+
+  sortable # creates the controller action which handles the sorting
+
 
   index do
     selectable_column
+    sortable_handle_column
     column :name
     column :text do |master_class|
       raw master_class.text

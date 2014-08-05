@@ -6,6 +6,10 @@ ActiveAdmin.register Catering do
     menu_attributes: [:name, :description, :price, sections_attributes: [:id, :name, :text, :_destroy]]
 
   config.filters = false
+  config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_list column
+  config.paginate   = false # optional; drag-and-drop across pages is not supported
+
+  sortable # creates the controller action which handles the sorting
 
   controller do
     include ImageRowUploader
@@ -32,6 +36,7 @@ ActiveAdmin.register Catering do
 
   index do
     selectable_column
+    sortable_handle_column
     column :name
     column :text do |catering|
       raw catering.text

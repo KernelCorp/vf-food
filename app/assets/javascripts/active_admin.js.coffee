@@ -1,4 +1,5 @@
 #= require active_admin/base
+#= require activeadmin-sortable
 #= require lib/imagesController
 #= require vendor/fileuploader.js
 #= require tinymce

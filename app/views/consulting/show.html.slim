@@ -21,15 +21,13 @@
 
     a.slider_link.collapse#consulting_link href='#'
 
-    .col-sm-6.index3#consulting_description
-      - unless @consulting_next.nil?
-        div.consulting_link_block
-          = link_to @consulting_next.name, @consulting_next, class: 'next_consulting'
+    .col-sm-6#consulting_block
+      #consulting_description.index3
+        h1 == @consulting.name
+        - unless @consulting_next.nil?
+          h1 == link_to @consulting_next.name, @consulting_next, class: 'next_consulting'
 
+        .description
+          == @consulting.text
 
-      h1 == @consulting.name
-
-      .description
-        == @consulting.text
-
-      button.button.center#consulting_button Заказать #{@consulting.name}
+        button.button.center#consulting_button Написать нам

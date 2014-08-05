@@ -11,7 +11,7 @@ RSpec.describe 'Caterings', type: :request do
   describe 'GET some catering' do
     before do
       5.times{ create(:catering) }
-      @first = Catering.order_by(:name.asc).first
+      @first = Catering.order_by(:position.asc).first
       get catering_path(@first)
     end
     context 'Show first catering' do
@@ -20,14 +20,14 @@ RSpec.describe 'Caterings', type: :request do
       it { assert_select '#caterigns .col-sm-7 .description', html: @first.text }
       it_behaves_like 'sending_order_form' do
         let(:object_instance_name) { @first.name }
-        let(:order_button_name) { 'Оставить заявку' }
+        let(:order_button_name) { 'Написать нам' }
         let(:source_page) { catering_path(@first) }
       end
     end
 
     context 'First catering have other catering links' do
       before :each do
-        @list = Catering.order_by(:name.asc).all
+        @list = Catering.order_by(:position.asc).all
       end
       it do
         @list.each do |catering|

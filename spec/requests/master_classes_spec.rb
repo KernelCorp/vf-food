@@ -11,13 +11,13 @@ RSpec.describe 'MasterClasses', :type => :request do
   describe 'Get some master class' do
     before do
       3.times { create :master_class }
-      @first = MasterClass.first
+      @first = MasterClass.order_by(:position.asc).first
       get master_class_path(@first)
     end
 
     it_behaves_like 'sending_order_form' do
       let(:object_instance_name) { @first.name }
-      let(:order_button_name) { 'Заказать ' + @first.name }
+      let(:order_button_name) { 'Написать нам' }
       let(:source_page) { master_class_path(@first) }
     end
 
@@ -28,7 +28,7 @@ RSpec.describe 'MasterClasses', :type => :request do
 
     context 'Other master class links on page' do
       before :each do
-        @list = Catering.order_by(:name.asc).all
+        @list = Catering.order_by(:position.asc).all
       end
       it do
         @list.each do |catering|
