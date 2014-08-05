@@ -67,10 +67,10 @@ consulting_gallery = ->
 
   slider_destructor = ->
     consulting_slider.destroySlider()
-    $(document).off 'page:fetch', slider_destructor
+    $(document).off 'page:receive', slider_destructor
     return
 
-  $(document).on 'page:fetch', slider_destructor
+  $(document).on 'page:receive', slider_destructor
 
   document.body.style.transition = 'background-color 300ms ease 0'
   return
