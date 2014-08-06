@@ -17,7 +17,11 @@ html
 
       #footer
         .container
-          #vf-food-copyrights &copy; #{Time.now.year} VF food, All rights reserved
+          #vf-food-copyrights
+            ' &copy; #{Time.now.year} VF food, All rights reserved
+            a [href='https://www.facebook.com/catering.vf' class='fb_link'
+              target='_blank' title='VF food on Facebook']
+              == image_tag 'fb_logo.png'
           #kerweb-copyrights
             | Сайт разработан в&nbsp
             a href='http://kerweb.ru' target='_blank'
