@@ -32,10 +32,11 @@
                   .menu_info
                     .h3 = menu.name
                     .description == menu.description
-                    .price
-                      ' Стоимость:
-                      =' menu.price
-                      | рублей
+                    - if menu.price.length > 0
+                      .price
+                        ' Стоимость:
+                        =' menu.price
+                        | рублей
 
                   - menu.sections.each do |section|
                     .menu_section
