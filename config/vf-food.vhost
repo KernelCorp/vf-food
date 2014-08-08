@@ -6,7 +6,7 @@ server {
   listen 80;
 
   client_max_body_size 1G;
-  server_name vf.kerweb.ru;
+  server_name vf.kerweb.ru vf-food.com www.vf-food.com;
   keepalive_timeout 5;
   root /var/www/vf-food/current/public;
       try_files $uri/index.html $uri.html $uri @myapp;
