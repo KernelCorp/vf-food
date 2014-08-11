@@ -16,15 +16,15 @@ VfFood::Application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      address:              'smtp.gmail.com',
-      port:                 587,
+      address:              'smtp.yandex.ru',
+      port:                 465,
       # domain:               'example.com',
-      user_name:            'user@example.local',
-      password:             '12345',
+      user_name:            'vf-food',
+      password:             '123vffood123',
       authentication:       'plain',
       enable_starttls_auto: true  }
   config.action_mailer.default_options = {
-      from: 'user@example.local'
+      from: 'vf-food@yandex.ru'
   }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
