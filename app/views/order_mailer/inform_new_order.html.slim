@@ -3,8 +3,18 @@ html
   head
     meta charset='uft-8'
   body
-    h1 На сайте появился новый заказ
-    p Перейдите в панель управления для ознакомления с заказом
+    h1 Новый заказ
     p
-      ' Ссылка на
-      == link_to 'заказы', 'vf-food.com/admin/orders'
+      ' Имя:
+      == @order.name
+    p
+      ' Телефон:
+      == @order.phone
+    p
+      ' E-mail:
+      == @order.email
+    p
+      ' Сообщение:
+      == @order.text
+
+    p  == link_to 'Страница заказов', 'vf-food.com/admin/orders'

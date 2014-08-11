@@ -1,7 +1,8 @@
 class OrderMailer < ActionMailer::Base
-  # default from: 'user@example.com'
+  default to: 'vfcatering@mail.ru'
 
-  def inform_new_order
-    mail to: 'vfcatering@mail.ru', subject: 'Vf-food.com - новый заказ на сайте'
+  def inform_new_order(order)
+    @order = order
+    mail subject: 'Vf-food.com - новый заказ'
   end
 end
