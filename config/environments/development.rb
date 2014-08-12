@@ -25,7 +25,7 @@ VfFood::Application.configure do
       authentication:       'plain',
       enable_starttls_auto: true  }
   config.action_mailer.default_options = {
-      from: 'user@example.local'
+      from: 'vf-food@yandex.ru'
   }
 
 
